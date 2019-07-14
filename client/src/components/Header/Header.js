@@ -7,13 +7,13 @@ export default class Header extends Component {
         return (
             <div>
                 <nav className='nav'>
-                    <div className='nav__logo-group'>
-                        <Link className='nav__link nav__logo' to='/'>Numerology</Link>
-                        <span className='nav__tagline--wide'>Your Destiny Awaits.</span>
+                    <div>
+                        <Link to='/'>Numerology</Link>
+                        <span>Your Destiny Awaits.</span>
                     </div>
-                    <div className='nav__home-links'>
-                        <Link className='nav__link' to='/register'>Get Started</Link>
-                        <Link className='nav__link' to='/login'>Log In</Link>
+                    <div>
+                        <Link to='/register'>Get Started</Link>
+                        <Link to='/login'>Log In</Link>
                     </div>
                 </nav>
                 
