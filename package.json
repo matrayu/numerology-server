@@ -4,8 +4,8 @@
   "description": "NodeJS project for Numerology Chart App",
   "main": "app.js",
   "scripts": {
-    "test": "mocha --require test/setup.js",
-    "dev": "nodemon src/server.js",
+    "test": "mocha --require db/test/setup.js",
+    "dev": "nodemon db/src/server.js",
     "migrate": "postgrator --config postgrator-config.js",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node db/src/server.js",
