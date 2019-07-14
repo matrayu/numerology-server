@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+.login-form {
+    margin: 20%;
+    background: #f2f2f2;
+    padding: 5%;
+    border-radius: 2%;
+    font-size: 12px;
+}
+  
+input[type=text], input[type=email], input[type=password], select, textarea {
+    width: 80%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 14px;
+    /* margin: 14px; */
+}
+
+.login-control-group {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* width: 80%; */
+    /* padding: 6px; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 4px; */
+    /* resize: vertical; */
+    margin: 10px -30px 10px -30px;
+}
+
+fieldset {
+    border: 0;
+}
+
+.header {
+    font-size: 30px;
+}
+  
+/* label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+} */
+
+/* .button {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+  
+button {
+    background-color: rgb(42, 71, 235);
+    width: 80%;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+}
+  
+/* button:hover {
+    background-color: #45a049;
+} */
+  
+/* .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+} */
+  
+/* Clear floats after the columns */
+/* .row:after {
+    content: "";
+    display: table;
+    clear: both;
+} */
+  
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/* @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+         margin-top: 0;
+    }
+} */

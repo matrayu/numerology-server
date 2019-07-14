@@ -1,0 +1,51 @@
+.ReportHeader__stats__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.ReportHeader__userDetails {
+    color: aliceblue;
+    text-transform: uppercase;
+}
+
+.ReportHeader__userDetails {
+    margin: 20px;
+}
+
+.ReportHeader__username {
+    font-size: 28pt;
+    margin-bottom: -20px;
+}
+
+.ReportHeader__userDob {
+    font-size: 16pt;
+}
+
+.ReportHeader__stats__number {
+    text-align: center;
+    margin: 15px;
+    padding: 40px;
+    border: 4px solid aliceblue;
+    border-radius: 50%;
+    min-width: 112px;
+    font-size: 30pt;
+}
+
+.ReportHeader__stats__text {
+    font-size: 14pt;
+    color: aliceblue;
+    text-align: center;
+    line-height: 21px;
+}
+
+.ReportHeader__stats__dob__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    font-size: 16pt;
+    margin-top: 30px;
+    color: aliceblue;
+}

@@ -1,0 +1,71 @@
+.reportData__wrapper {
+    display: block;
+    margin-top: 50px;
+}
+
+.reportData__section__title {
+    font-size: 22pt;
+}
+
+.reportData__section__container__odd {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.reportData__section__container__even {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.reportData__section {
+    color: aliceblue;
+}
+
+.reportData__section:nth-child(odd) {
+   background-color: #bbb;
+   color: black;
+}
+
+.reportData__section__group {
+    max-width: 325px;
+    margin: 10px;
+    padding: 30px;
+}
+
+.reportData__section__group__number {
+    font-size: 80pt;
+    text-align: center;
+    text-shadow: 3px 3px 5px #ffffff;
+}
+
+.reportData__section__info {
+    font-size: 12pt;
+}
+
+.image__group {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.black {
+    color: black;
+}
+
+img {
+    opacity: 10%;
+}
+
+
+
