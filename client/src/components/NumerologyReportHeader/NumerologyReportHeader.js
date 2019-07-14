@@ -6,57 +6,57 @@ class NumerologyReportHeader extends Component {
     render() {
 
         return (
-            <div className='ReportHeader__wrapper'>
-                <div className='ReportHeader__userDetails'>
-                    <h1 className='ReportHeader__username userDetails'>{userDetails.name}</h1>
-                    <h3 className='ReportHeader__userDob userDetails'>{userDetails.dob}</h3>
+            <div className='reportHeader__wrapper'>
+                <div>
+                    <h1>{userDetails.name}</h1>
+                    <h3>{userDetails.dob}</h3>
                 </div>
-                <div className='ReportHeader__stats__wrapper'>
-                    <div className='ReportHeader__stats'>
-                        <div className='ReportHeader__stats__text destiny top'>
+                <div>
+                    <div>
+                        <div>
                             <p>Destiny<br/>Number</p>
-                            <p className='ReportHeader__stats__number'>{userStats.destiny}</p>
+                            <p>{userStats.destiny}</p>
                         </div>
                     </div>
-                    <div className='ReportHeader__stats'>
-                        <div className='ReportHeader__stats__text motivation top'>
+                    <div>
+                        <div>
                             <p>Motivation<br/>Number</p>
-                            <p className='ReportHeader__stats__number'>{userStats.motivation}</p>
+                            <p>{userStats.motivation}</p>
                         </div>
                     </div>
-                    <div className='ReportHeader__stats'>
-                        <div className='ReportHeader__stats__text innerSelf top'>
+                    <div>
+                        <div>
                             <p>Inner-Self<br/>Number</p>
-                            <p className='ReportHeader__stats__number'>{userStats.innerSelf}</p>
+                            <p>{userStats.innerSelf}</p>
                         </div>
                     </div>
-                    <div className='ReportHeader__stats'>
-                        <div className='ReportHeader__stats__text expression top'>
+                    <div>
+                        <div>
                             <p>Expression<br/>Number</p>
-                            <p className='ReportHeader__stats__number'>{userStats.expression}</p>
+                            <p>{userStats.expression}</p>
                         </div>
                     </div>
-                    <div className='ReportHeader__stats'>
-                        <div className='ReportHeader__stats__text karmicLessons top'>
+                    <div>
+                        <div>
                             <p>Karmic<br/>Lessons</p>
-                            <p className='ReportHeader__stats__number'>{userStats.karmicLessons.join(', ')}</p>
+                            <p>{userStats.karmicLessons.join(', ')}</p>
                         </div>
                     </div>
-                    <div className='ReportHeader__stats'>
-                        <div className='ReportHeader__stats__text hiddenTendencies top'>
+                    <div>
+                        <div>
                             <p>Hidden<br/>Tendencies</p>
-                            <p className='ReportHeader__stats__number'>{userStats.hiddenTendencies.join(', ')}</p>
+                            <p>{userStats.hiddenTendencies.join(', ')}</p>
                         </div>
                     </div>
-                    <div className='ReportHeader__stats'>
-                        <div className='ReportHeader__stats__text subconsciousResponse top'>
+                    <div>
+                        <div>
                             <p>Subconscious<br/>Response</p>
-                            <p className='ReportHeader__stats__number'>{userStats.subconsciousResponse}</p>
+                            <p>{userStats.subconsciousResponse}</p>
                         </div>
                     </div>
                 </div>
-                <div className='ReportHeader__stats__dob__wrapper'>
-                    <div className='ReportHeader__stats__dob__items'>
+                <div>
+                    <div>
                         <p>Life Cycles</p>
                         <p>Turning Points</p>
                         <p>Challenges</p>

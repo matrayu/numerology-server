@@ -9,7 +9,6 @@
     display: grid;
     margin: 0;
     text-align: center;
-    color: aliceblue;
 }
 
 .nav__logo {
@@ -17,13 +16,10 @@
 }
 
 .nav a {
-    color: aliceblue;
     text-decoration: none;
 }
 
 .nav__tagline--wide {
-    /* opacity: 0.35; */
-    /* margin-left: 10px; */
     font-size: 14px;
     text-align: left;
     margin-top: -10px;
@@ -46,7 +42,6 @@
 }
 
 .nav__home-links a:last-child {
-    color: white;
     padding: 5px 15px;
     border-radius: 15px;
     margin-left: 10px;
@@ -71,13 +66,3 @@
         font-size: 10pt;
     }
 }
-
-/* @media screen and (max-width: 490px) {
-    .nav__tagline--wide {
-        display: none;
-    }
-
-    .nav__tagline--narrow {
-        display: inherit;
-    }
-} */

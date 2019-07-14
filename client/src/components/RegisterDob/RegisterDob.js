@@ -9,16 +9,16 @@ class RegisterDob extends Component {
 
     render() {
         return (
-            <form className="signup-form signup-form-aligned" onSubmit={this.handleRoute}>
-                <div className="signup-control-group header">Your Birth Date</div>
-                <fieldset className="signup-form__flex">
-                    <div className="signup-control-group">
-                        <label for="birthdate"></label>
+            <form className="signup-form" onSubmit={this.handleRoute}>
+                <div>Your Birth Date</div>
+                <fieldset>
+                    <div>
+                        <label htmlFor="birthdate"></label>
                         <input id="birthdate" type="date" placeholder="First Name"></input>
                     </div>
 
-                    <div className="signup-control-group button">
-                        <button type="submit" className="signup-button signup-button-primary">Create My Chart</button>
+                    <div>
+                        <button type="submit">Create My Chart</button>
                     </div>
                 </fieldset>
             </form>

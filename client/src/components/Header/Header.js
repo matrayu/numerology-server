@@ -16,8 +16,6 @@ export default class Header extends Component {
                         <Link to='/login'>Log In</Link>
                     </div>
                 </nav>
-                
-                
             </div>
         )
     }

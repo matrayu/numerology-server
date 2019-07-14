@@ -6,13 +6,7 @@ html {
 
 body {
     margin: 0;
-    background-color:rgb(14, 27, 160);
-}
-
-
-h1 {
-    font-size: 2em;
-    margin: .67em 0
+    color: #03021b;
 }
 
 article,aside,footer,header,nav,section {
@@ -25,11 +19,7 @@ article,aside,footer,header,nav,section {
     box-sizing: border-box
 }
 
-html {
-    font-size: 62.5%
-}
-
-@media (min-width: 112.5em) {
+/* @media (min-width: 112.5em) {
     html {
         font-size:75%
     }
@@ -45,7 +35,7 @@ html {
     html {
         font-size:50%
     }
-}
+} */
 
 body {
     font-family: Montserrat,sans-serif;
@@ -59,11 +49,11 @@ body {
     width: 114rem
 }
 
-@media (max-width: 65.625em) {
+/* @media (max-width: 65.625em) {
     .section {
         width:100%
     }
-}
+} */
 
 .section--one {
     height: 100vh

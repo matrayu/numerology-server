@@ -4,22 +4,21 @@ import './LoginForm.css';
 class LoginForm extends Component {
     render() {
         return (
-            <form className="login-form login-form-aligned">
-                <div className="login-control-group header">Log In</div>
-                <fieldset className="login-form__flex">
-
-                    <div className="login-control-group">
-                        <label for="email"></label>
+            <form className="login-form">
+                <div>Log In</div>
+                <fieldset>
+                    <div>
+                        <label htmlFor="email"></label>
                         <input id="email" type="email" placeholder="Email Address"></input>
                     </div>
 
-                    <div className="login-control-group">
-                        <label for="password"></label>
+                    <div>
+                        <label htmlFor="password"></label>
                         <input id="password" type="password" placeholder="Password"></input>
                     </div>
 
-                    <div className="login-control-group button">
-                        <button type="submit" className="login-button login-button-primary">Log In</button>
+                    <div>
+                        <button type="submit">Log In</button>
                     </div>
                 </fieldset>
             </form>

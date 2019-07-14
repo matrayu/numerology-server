@@ -10,31 +10,31 @@ export default class RegisterForm extends Component {
 
     render() {
         return (
-            <form className="signup-form signup-form-aligned" onSubmit={this.handleRoute}>
-                <div className="signup-control-group header">Create Account</div>
-                <fieldset className="signup-form__flex">
-                    <div className="signup-control-group">
-                        <label for="name"></label>
+            <form className="signup-form" onSubmit={this.handleRoute}>
+                <div>Create Account</div>
+                <fieldset>
+                    <div>
+                        <label htmlFor="name"></label>
                         <input id="name" type="text" placeholder="Username"></input>
                     </div>
 
-                    <div className="signup-control-group">
-                        <label for="email"></label>
+                    <div>
+                        <label htmlFor="email"></label>
                         <input id="email" type="email" placeholder="Email Address"></input>
                     </div>
 
-                    <div className="signup-control-group">
-                        <label for="password"></label>
+                    <div>
+                        <label htmlFor="password"></label>
                         <input id="password" type="password" placeholder="Password"></input>
                     </div>
 
-                    <div className="signup-control-group">
-                        <label for="confirm_password"></label>
+                    <div>
+                        <label htmlFor="confirm_password"></label>
                         <input id="confirm_password" type="password" placeholder="Confirm Password"></input>
                     </div>
 
-                    <div className="signup-control-group button">
-                        <button type="submit" className="signup-button signup-button-primary">Continue</button>
+                    <div>
+                        <button type="submit">Continue</button>
                     </div>
                 </fieldset>
             </form>
