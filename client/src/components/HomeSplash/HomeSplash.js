@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import RegisterForm from '../RegisterForm/RegisterForm';
+//import RegisterForm from '../RegisterForm/RegisterForm';
 import './HomeSplash.css';
+const helpers = require('../../helpers');
 
 class HomeSplash extends Component {
     render() {
+        
         return (
             <main className='main-wrapper' role="main">
                 <section className='section'>

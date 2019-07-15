@@ -93,7 +93,7 @@ const numNameData = {
 }
 
 const userStats = {
-    destiny: 1,
+    destiny: 6,
     innerSelf: 4,
     motivation: 7,
     expression: 11,
@@ -104,7 +104,7 @@ const userStats = {
 
 const userDetails = {
     name: "Emma Mila Smith",
-    dob: "May 3rd, 1983",
+    dob: "May 3rd, 1983"
 }
 
 module.exports = { numNameData, userStats, userDetails }
