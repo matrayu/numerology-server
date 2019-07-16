@@ -25,10 +25,7 @@ const letterCode = {
     x: 6,
     y: 7,
     z: 8,
-} 
-//const name = 'Frank William Vilen'
-//const vowels = name.replace(/[^aeiouy]/ig, "")
-//const consonants = name.replace(/[^bcdfghjklmnpqrstvwxyz]/ig, "")
+}
 
 function getMotivation(vowels) {
     let total = 0
@@ -41,7 +38,7 @@ function getMotivation(vowels) {
     }
 
     else {
-        return { motivation: reduceNum(total) }
+        return reduceNum(total)
     }
 }
 
@@ -56,7 +53,7 @@ function getInnerSelf(consonants) {
     }
 
     else {
-        return { innerSelf: reduceNum(total) }
+        return reduceNum(total)
     }
 }
 
@@ -72,7 +69,7 @@ function getExpression(allLetters) {
     }
 
     else {
-        return { expression: reduceNum(total) }
+        return reduceNum(total)
     }
 }
 
@@ -153,6 +150,184 @@ function processName(name) {
     return output
 }
 
+function splitDob(dob) {
+    return dob.split('-')
+}
+
+function getDestinyNumber(dob) {
+    let sumDob = 0
+    let dobArr = splitDob(dob)
+
+    dobArr.forEach(n => {
+        sumDob += parseInt(n)
+    })
+
+    return reduceNum(sumDob)
+}
+
+function getFirstLifeCycle(dob) {
+    let firstCycle = []
+    let firstCycleLength = 0
+    let dobArr = splitDob(dob)
+    let destinyNum = getDestinyNumber(dob)
+
+    firstCycleLength = (36 - destinyNum) + 1
+
+    let firstCycleEnd = parseInt(dobArr[0]) + firstCycleLength
+
+    firstCycle.push(parseInt(dobArr[1]), parseInt(dobArr[0]), firstCycleEnd)
+
+    return firstCycle
+}
+
+function getSecondLifeCycle(dob) {
+    let secondCycle = []
+    let dobArr = splitDob(dob)
+    let firstCycleEnd = getFirstLifeCycle(dob)[2]
+
+    secondCycleEnd = (firstCycleEnd + 27)
+
+    secondCycle.push(parseInt(dobArr[2]), firstCycleEnd, secondCycleEnd)
+
+    return secondCycle
+}
+
+function getThirdLifeCycle(dob) {
+    let thirdCycle = []
+    let dobArr = splitDob(dob)
+    let thirdCycleNumber = reduceNum(dobArr[0])
+    let secondCycleEnd = getSecondLifeCycle(dob)[2]
+
+    thirdCycle.push(thirdCycleNumber, secondCycleEnd)
+
+    return thirdCycle
+}
+
+function getLifeCycles(dob) {
+    const lifeCycles = {
+        firstLifeCycle: getFirstLifeCycle(dob),
+        secondLifeCycle: getSecondLifeCycle(dob),
+        thirdLifeCycle: getThirdLifeCycle(dob)
+    }
+
+    return lifeCycles
+}
+
+function getFirstTurningPoint(dob) {
+    let firstTurningPoint = []
+    let firstTurningPointNumber = reduceNum(parseInt(splitDob(dob)[1]) + parseInt(splitDob(dob)[2]))
+  
+    firstTurningPoint.push(firstTurningPointNumber)
+  
+    let firstLifeCycle = getFirstLifeCycle(dob).map((n, i) => {
+      if (i > 0) {
+        firstTurningPoint.push(n)
+      }
+    })
+  
+    return firstTurningPoint
+    
+  }
+  
+function getSecondTurningPoint(dob) {
+    let secondTurningPoint = []
+    let secondTurningPointNumber = reduceNum(parseInt(splitDob(dob)[2]) + parseInt(splitDob(dob)[0]))
+
+    secondTurningPoint.push(secondTurningPointNumber, getFirstLifeCycle(dob)[2], getFirstLifeCycle(dob)[2] + 9)
+
+    return secondTurningPoint
+}
+
+function getThirdTurningPoint(dob) {
+    let thirdTurningPoint = []
+    let thirdTurningPointNumber = reduceNum(getFirstTurningPoint(dob)[0] + getSecondTurningPoint(dob)[0])
+
+    thirdTurningPoint.push(thirdTurningPointNumber, getSecondTurningPoint(dob)[2], getSecondTurningPoint(dob)[2] + 9)
+
+    return thirdTurningPoint
+}
+
+function getFourthTurningPoint(dob) {
+    let fourthTurningPoint = []
+    let fourthTurningPointNumber = reduceNum(parseInt(splitDob(dob)[1]) + parseInt(splitDob(dob)[0]))
+
+    fourthTurningPoint.push(fourthTurningPointNumber, getThirdTurningPoint(dob)[2])
+
+    return fourthTurningPoint
+}
+
+function getTurningPoints(dob) {
+    let turningPoints = []
+    turningPoints.push(
+        getFirstTurningPoint(dob),
+        getSecondTurningPoint(dob),
+        getThirdTurningPoint(dob),
+        getFourthTurningPoint(dob)
+    )
+
+    return turningPoints
+}
+
+function getfirstMinorChallenge(dob) {
+    let month = parseInt(splitDob(dob)[1])
+    let day = parseInt(splitDob(dob)[2])
+
+    if (day === month) {
+        return 0
+    } else {
+        if (day > month) {
+            return day - month
+        } else {
+            return month - day
+        }
+    }
+}
+
+function getsecondMinorChallenge(dob) {
+    let day = parseInt(splitDob(dob)[2])
+    let yearReduced = reduceNum(parseInt(splitDob(dob)[0]))
+
+    if (day === yearReduced) {
+        return 0
+    } else {
+        if (day > yearReduced) {
+            return day - yearReduced
+        } else {
+            return yearReduced - day
+        }
+    }
+}
+
+function getMajorChallenge(dob) {
+    let minor1 = getfirstMinorChallenge(dob)
+    let minor2 = getsecondMinorChallenge(dob)
+
+    if (minor1 === minor2) {
+        return 0
+    } else {
+        if (minor1 > minor2) {
+            return minor1 - minor2
+        } else {
+            return minor2 - minor1
+        }
+    }
+}
+
+function getChallenges(dob) {
+    let challenges = []
+        challenges.push(
+        getfirstMinorChallenge(dob),
+        getsecondMinorChallenge(dob),
+        getMajorChallenge(dob)
+    )
+
+    return challenges
+
+}
+
 module.exports = {
-    processName
+    processName,
+    getLifeCycles,
+    getTurningPoints,
+    getChallenges
 }

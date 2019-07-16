@@ -1,15 +1,33 @@
 import React, { Component } from 'react';
 import './RegisterDob.css';
 
-class RegisterDob extends Component {
+export default class RegisterDob extends Component {
+    static defaultProps = {
+        onDobSuccess: () => {}
+    }
+
+    state = { 
+        dob: null,
+        error: null
+    }
+    
     handleRoute = ev => {
         ev.preventDefault()
         this.props.history.push('/numerology-chart')
     }
 
+    handleSubmit = ev => {
+        ev.preventDefault()
+        const dob = ev.target
+    }
+
     render() {
+        const { error } = this.state
         return (
-            <form className="signup-form" onSubmit={this.handleRoute}>
+            <form 
+                className="signup-form" 
+                onSubmit={this.handleSubmit}
+            >
                 <div>Your Birth Date</div>
                 <fieldset>
                     <div>
@@ -25,5 +43,3 @@ class RegisterDob extends Component {
         )
     }
 }
-
-export default RegisterDob
