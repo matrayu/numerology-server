@@ -185,7 +185,7 @@ function getSecondLifeCycle(dob) {
     let dobArr = splitDob(dob)
     let firstCycleEnd = getFirstLifeCycle(dob)[2]
 
-    secondCycleEnd = (firstCycleEnd + 27)
+    let secondCycleEnd = (firstCycleEnd + 27)
 
     secondCycle.push(parseInt(dobArr[2]), firstCycleEnd, secondCycleEnd)
 

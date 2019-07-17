@@ -19,12 +19,12 @@ app.get('/', (req, res) => {
     res.send('Hello, boilerplate!')
 })
 
-app.use((error, req, res, next) => {
+app.use(function errorHandler(error, req, res, next) {
     let response
     if (NODE_ENV === 'production') {
-        response = { error: { message: 'server error' }}
+        response = { error: 'server error' }
     } else {
-        response = { error }
+        response = { error: error.message, object: error }
     }
     res.status(500).json(response)
 })
