@@ -4,20 +4,21 @@ const morgan = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
+const userRouter = require('./users/users-router')
+const authRouter = require('./auth/auth-router')
+const numerologyDataRouter = require('./numerology-data/numerology-data-router')
 
 const app = express()
 
-const morganOption = (NODE_ENV === 'production')
-  ? 'tiny'
-  : 'common';
-
-app.use(morgan(morganOption))
+app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', {
+    skip: () => NODE_ENV === 'test',
+}))
 app.use(cors())
 app.use(helmet())
 
-app.get('/', (req, res) => {
-    res.send('Hello, boilerplate!')
-})
+app.use('/api/users', userRouter)
+app.use('/api/auth', authRouter)
+app.use('/api/numerology-data', numerologyDataRouter)
 
 app.use(function errorHandler(error, req, res, next) {
     let response
