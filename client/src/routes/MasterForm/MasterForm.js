@@ -4,7 +4,7 @@ import RegStep2 from '../../components/RegStep2/RegStep2';
 import RegStep3 from '../../components/RegStep3/RegStep3';
 import './MasterForm.css'
 
-class MasterForm extends Component {
+export default class MasterForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -129,5 +129,3 @@ class MasterForm extends Component {
       );
     }
 }
-  
-export default MasterForm;
