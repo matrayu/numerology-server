@@ -5,9 +5,6 @@ export default class RegStep1 extends Component {
     render() {
         let props = this.props
 
-        if (props.currentStep !== 1) {
-            return null
-        } 
         return(
             <div className="form-group">
                 <label htmlFor="username">Username</label>
@@ -50,7 +47,7 @@ export default class RegStep1 extends Component {
                     name="confirmPassword"
                     type="password"
                     placeholder="Confirm password"
-                    value={props.password}
+                    value={props.confirmPassword}
                     onChange={props.handleChange}
                 /> 
             </div>

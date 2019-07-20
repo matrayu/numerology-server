@@ -6,9 +6,6 @@ export default class RegStep2 extends Component {
     render() {
         let props = this.props
 
-        if (props.currentStep !== 2) {
-            return null
-        } 
         return(
             <div className="form-group">
             <label htmlFor="firstName">First Name</label>

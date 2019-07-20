@@ -2,23 +2,30 @@ import React, { Component } from 'react';
 import RegStep1 from '../../components/RegStep1/RegStep1';
 import RegStep2 from '../../components/RegStep2/RegStep2';
 import RegStep3 from '../../components/RegStep3/RegStep3';
-import './MasterForm.css'
+import AuthApiService from '../../services/auth-api-service'
+import './RegMaster.css'
 
-export default class MasterForm extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            currentStep: 1,
-            email:  null,
-            username: null,
-            password: null,
-            confirmPassword: null,
-            passwordMatch: false,
-            firstName: null,
-            middleName: null,
-            lastName: null,
-            dob: null  
-        }
+export default class RegMaster extends Component {
+    static defaultProps = {
+        onRegistrationSuccess: () => {}
+    }
+
+    static defaultProps = {
+
+    }
+
+    state = {
+        currentStep: 1,
+        email:  null,
+        username: null,
+        password: null,
+        confirmPassword: null,
+        passwordMatch: false,
+        firstName: null,
+        middleName: null,
+        lastName: null,
+        dob: null,
+        error: null  
     }
 
     handleChange = event => {
@@ -29,14 +36,32 @@ export default class MasterForm extends Component {
     handleSubmit = event => {
         event.preventDefault()
         const { email, username, password, firstName, middleName, lastName, dob } = this.state
-        alert(`Your registration detail: \n 
-                Email: ${email} \n 
-                Username: ${username} \n
-                Password: ${password} \n
-                First Name: ${firstName} \n
-                Middle Name: ${middleName} \n
-                Last Name: ${lastName} \n
-                Date of Birth: ${dob}`)
+
+        this.setState({ error: null })
+        AuthApiService.postUser({
+            username: username,
+            password: password,
+            firstName: firstName,
+            middleName: middleName,
+            lastName: lastName,
+            email: email,
+            dob: dob
+
+        })
+        .then(user => {
+            this.state.username = null
+            this.state.password = null
+            this.state.firstName = null
+            this.state.middleName = null
+            this.state.lastName = null
+            this.state.email = null
+            this.state.email = null
+            this.props.onRegistrationSuccess()
+        })
+        .catch(res => {
+            console.log(res.error)
+            this.setState({ error: res.error })
+        })
     }
 
     _next = () => {

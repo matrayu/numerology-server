@@ -8,39 +8,64 @@ export default class LoginForm extends Component {
       onLoginSuccess: () => {}
     }
   
-    state = { error: null }
+    state = { 
+      error: null,
+      username: null,
+      password: null 
+    }
+
+    handleChange = event => {
+      const {name, value} = event.target
+      this.setState({ [name]: value })   
+    }
   
     handleSubmitJwtAuth = ev => {
       ev.preventDefault()
       this.setState({ error: null })
-      const { user_name, password } = ev.target
+      const { username, password } = ev.target
       AuthApiService.postLogin({
-        user_name: user_name.value,
+        username: username.value,
         password: password.value,
       })
         .then(res => {
-          user_name.value = ''
+          username.value = ''
           password.value = ''
           this.props.onLoginSuccess()
         })
     }
   
     render() {
+      const props = this.props
       const { error } = this.state
       return (
         <form className='LoginForm' onSubmit={this.handleSubmitJwtAuth}>
           <div role='alert'>
             {error && <p className='red'>{error}</p>}
           </div>
-          <div className='user_name'>
-            <label htmlFor='LoginForm__user_name'>User name</label>
-            <Input required name='user_name' id='LoginForm__user_name'></Input>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input
+                className="form-control"
+                id="username"
+                name="username"
+                type="text"
+                placeholder="Enter username"
+                value={props.username}
+                onChange={this.handleChange}
+            />
+
+            <label htmlFor="password">Password</label>
+              <input
+                  className="form-control"
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="Enter password"
+                  value={props.password}
+                  onChange={this.handleChange}
+              />
           </div>
-          <div className='password'>
-            <label htmlFor='LoginForm__password'>Password</label>
-            <Input required name='password' type='password' id='LoginForm__password'></Input>
-          </div>
-          <Button type='submit'>Login</Button>
+          <button className="btn btn-success btn-block">Sign up</button>
         </form>
       )
     }
