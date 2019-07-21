@@ -65,7 +65,7 @@ export default class LoginForm extends Component {
                   onChange={this.handleChange}
               />
           </div>
-          <button className="btn btn-success btn-block">Sign up</button>
+          <button className="btn btn-success btn-block">Log In</button>
         </form>
       )
     }
