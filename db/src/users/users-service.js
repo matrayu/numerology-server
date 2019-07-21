@@ -1,5 +1,6 @@
 const xss = require('xss')
 const bcrypt = require('bcryptjs')
+const Helpers = require('../helpers')
 
 const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/
 
@@ -50,6 +51,8 @@ const UserService = {
             date_created: new Date(user.date_created)
         }
     }
+
+
 }
 
 module.exports = UserService
