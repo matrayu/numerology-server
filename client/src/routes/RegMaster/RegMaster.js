@@ -16,14 +16,14 @@ export default class RegMaster extends Component {
 
     state = {
         currentStep: 1,
-        email:  null,
-        username: null,
-        password: null,
-        confirmPassword: null,
-        passwordMatch: false,
-        firstName: null,
-        middleName: null,
-        lastName: null,
+        email:  '',
+        username: '',
+        password: '',
+        confirmPassword: '',
+        passwordMatch: '',
+        first_name: '',
+        middle_name: '',
+        last_name: '',
         dob: null,
         error: null  
     }
@@ -35,27 +35,29 @@ export default class RegMaster extends Component {
         
     handleSubmit = event => {
         event.preventDefault()
-        const { email, username, password, firstName, middleName, lastName, dob } = this.state
+        const { email, username, password, first_name, middle_name, last_name, dob } = this.state
 
         this.setState({ error: null })
         AuthApiService.postUser({
             username: username,
             password: password,
-            firstName: firstName,
-            middleName: middleName,
-            lastName: lastName,
+            first_name: first_name,
+            middle_name: middle_name,
+            last_name: last_name,
             email: email,
             dob: dob
 
         })
         .then(user => {
-            this.state.username = null
-            this.state.password = null
-            this.state.firstName = null
-            this.state.middleName = null
-            this.state.lastName = null
-            this.state.email = null
-            this.state.email = null
+            this.setState({
+                username: null,
+                password: null,
+                first_name: null,
+                middle_name: null,
+                last_name: null,
+                email: null,
+                dob: null
+            })
             this.props.onRegistrationSuccess()
         })
         .catch(res => {

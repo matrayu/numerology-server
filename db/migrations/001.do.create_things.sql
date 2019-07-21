@@ -1,4 +1,4 @@
-CREATE TABLE numerology_things (
+CREATE TABLE things (
   id SERIAL PRIMARY KEY,
   image TEXT,
   title TEXT NOT NULL,

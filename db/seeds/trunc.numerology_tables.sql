@@ -1,4 +1,4 @@
 TRUNCATE
-  numerology_things,
-  numerology_users
+  things,
+  users
   RESTART IDENTITY CASCADE;

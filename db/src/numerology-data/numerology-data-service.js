@@ -4,7 +4,7 @@ const Treeize = require('treeize')
 const NumerologyDataService = {
   getAllNumerologyData(db) {
     return db
-      .from('numerology_things AS thg')
+      .from('things AS thg')
       .select(
         'thg.id',
         'thg.title',
@@ -14,7 +14,7 @@ const NumerologyDataService = {
         ...userFields,
       )
       .leftJoin(
-        'numerology_users AS usr',
+        'users AS usr',
         'thg.user_id',
         'usr.id',
       )
@@ -52,8 +52,10 @@ const NumerologyDataService = {
 
 const userFields = [
   'usr.id AS user:id',
-  'usr.user_name AS user:user_name',
-  'usr.full_name AS user:full_name',
+  'usr.username AS user:username',
+  'usr.first_name AS user:first_name',
+  'usr.middle_name AS user:middle_name',
+  'usr.last_name AS user:last_name',
   'usr.dob AS user:dob',
   'usr.date_created AS user:date_created',
   'usr.date_modified AS user:date_modified',

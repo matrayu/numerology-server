@@ -8,36 +8,36 @@ export default class RegStep2 extends Component {
 
         return(
             <div className="form-group">
-            <label htmlFor="firstName">First Name</label>
+            <label htmlFor="first_name">First Name</label>
             <input
                 className="form-control"
-                id="firstName"
-                name="firstName"
+                id="first_name"
+                name="first_name"
                 type="text"
                 placeholder="Enter first name"
-                value={props.username}
+                value={props.first_name}
                 onChange={props.handleChange}
             />
     
-            <label htmlFor="middleName">Middle Name</label>
+            <label htmlFor="middle_name">Middle Name</label>
             <input
                 className="form-control"
-                id="middleName"
-                name="middleName"
+                id="middle_name"
+                name="middle_name"
                 type="text"
                 placeholder="Enter middle name"
-                value={props.email}
+                value={props.middle_name}
                 onChange={props.handleChange}
             />
     
-            <label htmlFor="lastName">Last Name</label>
+            <label htmlFor="last_name">Last Name</label>
             <input
                 className="form-control"
-                id="lastName"
-                name="lastName"
+                id="last_name"
+                name="last_name"
                 type="text"
                 placeholder="Enter last name"
-                value={props.password}
+                value={props.last_name}
                 onChange={props.handleChange}
             /> 
             </div>

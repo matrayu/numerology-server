@@ -1,20 +1,20 @@
 BEGIN;
 
 TRUNCATE
-  numerology_things,
-  numerology_users
+  things,
+  users
   RESTART IDENTITY CASCADE;
 
-INSERT INTO numerology_users (user_name, full_name, dob, password)
+INSERT INTO users (username, firstName, middleName, lastName, dob, password)
 VALUES
-  ('dunder', 'Dunder Mifflin', '2000-05-03', '$2a$12$AmM8ZuvNAXf5FKYtyQ1xCus6Nm.YPbPazD3IAibAwZQWxdR7znkvW'),
-  ('b.deboop', 'Bodeep Deboop', '1979-08-03', '$2a$12$LwaEMhzGB1wQLmXmZch57e.t.N8YFZR49Ax4oHD1nGAYLxWJ5e0zK'),
-  ('c.bloggs', 'Charlie Bloggs', '1978-01-13', '$2a$12$HOjNkF3P/VqJB7YEuOKvx.yPokHFP0Bdkkk.qpqsOBt42D8xMkVlK'),
-  ('s.smith', 'Sam Smith', '1949-08-10', '$2a$12$c228lzGCIVZ0rOSQuz/LVOSuOysnJIXeMASEzMaQW40SQ5B0ODkYK'),
-  ('lexlor', 'Alex Taylor', '1942-05-11', '$2a$12$hOYu4F/2DFGyZnS4ir28pu7Oy2JKePsc0d8h87cNfNealWurUhOoO'),
-  ('wippy', 'Ping Won In', '1979-02-21', '$2a$12$VD04zwnrQZ/2.6Pw.ijzQuebC.M4ZZxH3UUq3IxaDzb.AvXus4k0S');
+  ('dunder', 'Dunder', 'Aka', 'Mifflin', '2000-05-03', '$2a$12$AmM8ZuvNAXf5FKYtyQ1xCus6Nm.YPbPazD3IAibAwZQWxdR7znkvW'),
+  ('b.deboop', 'Bodeep', 'Ira', 'Deboop', '1979-08-03', '$2a$12$LwaEMhzGB1wQLmXmZch57e.t.N8YFZR49Ax4oHD1nGAYLxWJ5e0zK'),
+  ('c.bloggs', 'Charlie', 'Moore', 'Bloggs', '1978-01-13', '$2a$12$HOjNkF3P/VqJB7YEuOKvx.yPokHFP0Bdkkk.qpqsOBt42D8xMkVlK'),
+  ('s.smith', 'Sam', 'James', 'Smith', '1949-08-10', '$2a$12$c228lzGCIVZ0rOSQuz/LVOSuOysnJIXeMASEzMaQW40SQ5B0ODkYK'),
+  ('lexlor', 'Alex', 'Tate', 'Taylor', '1942-05-11', '$2a$12$hOYu4F/2DFGyZnS4ir28pu7Oy2JKePsc0d8h87cNfNealWurUhOoO'),
+  ('wippy', 'Ping', 'Won', 'In', '1979-02-21', '$2a$12$VD04zwnrQZ/2.6Pw.ijzQuebC.M4ZZxH3UUq3IxaDzb.AvXus4k0S');
 
-INSERT INTO numerology_things (title, image, user_id, content)
+INSERT INTO things (title, image, userId, content)
 VALUES
   ('Hand-Painted Rubber Ducky', 'https://loremflickr.com/750/300/landscape?random=1', 1, 'This ducky has been hand-painted and is now art. Therefore it is useless and cannot be put in water.'),
   ('Cloning Machine', 'https://loremflickr.com/750/300/landscape?random=2', 2, '100% guaranteed to occasionally work every time! Requires a 167.23v power outlet or a dragonscale battery (obtained separately by solving a riddle).'),
