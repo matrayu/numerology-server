@@ -6,8 +6,21 @@ const letterCode = {
     y: 7, z: 8,
 }
 
-function joinName(first, middle, last) {
-    console.log(`${first} ${middle} ${last}`)
+function processName(first,middle,last) {
+    const fullName = fullName.concat(first," ",middle," ",last)
+    const vowels = fullName.replace(/[^aeiouy]/ig, "");
+    const consonants = fullName.replace(/[^bcdfghjklmnpqrstvwxyz]/ig, "");
+
+    const output = {
+        motivation: getMotivation(vowels),
+        innerSelf: getInnerSelf(consonants),
+        expression: getExpression(fullName),
+        karmicLessons: getKarmicHiddenSubconscious(fullName).karmicLessons,
+        hiddenTendencies: getKarmicHiddenSubconscious(fullName).hiddenTendencies,
+        subconciousResponse: getKarmicHiddenSubconscious(fullName).subconciousResponse
+    }
+
+    return output
 }
 
 function getMotivation(vowels) {
@@ -117,21 +130,7 @@ function reduceNum(n) {
     return reduced
 }
 
-function processName(name) {
-    const vowels = name.replace(/[^aeiouy]/ig, "");
-    const consonants = name.replace(/[^bcdfghjklmnpqrstvwxyz]/ig, "");
 
-    const output = {
-        motivation: getMotivation(vowels),
-        innerSelf: getInnerSelf(consonants),
-        expression: getExpression(name),
-        karmicLessons: getKarmicHiddenSubconscious(name).karmicLessons,
-        hiddenTendencies: getKarmicHiddenSubconscious(name).hiddenTendencies,
-        subconciousResponse: getKarmicHiddenSubconscious(name).subconciousResponse
-    }
-
-    return output
-}
 
 function splitDob(dob) {
     return dob.split('-')
@@ -309,7 +308,6 @@ function getChallenges(dob) {
 }
 
 module.exports = {
-    joinName,
     processName,
     getLifeCycles,
     getTurningPoints,

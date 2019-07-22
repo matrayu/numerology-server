@@ -1,6 +1,6 @@
 const xss = require('xss')
 const bcrypt = require('bcryptjs')
-const Helpers = require('../helpers')
+const UserHelpers = require('./users-helpers')
 
 const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/
 
@@ -50,6 +50,10 @@ const UserService = {
             dob: user.dob,
             date_created: new Date(user.date_created)
         }
+    },
+
+    processUser(user) {
+        UserHelpers.processName(user.first_name, user.middle_name, user.last_name)
     }
 
 

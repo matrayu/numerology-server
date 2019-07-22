@@ -117,9 +117,9 @@ export default class RegMaster extends Component {
             <RegStep2
                 currentStep={this.state.currentStep} 
                 handleChange={this.handleChange}
-                firstName={this.state.firstName}
-                middleName={this.state.middleName}
-                lastName={this.state.lastName}
+                first_name={this.state.first_name}
+                middle_name={this.state.middle_name}
+                last_name={this.state.last_name}
             />
         )
         
@@ -139,7 +139,7 @@ export default class RegMaster extends Component {
     render() {
       return (
         <React.Fragment>
-        <h1>Registration Form 🧙‍♂️</h1>
+        <h1>Registration Form</h1>
         <p>Step {this.state.currentStep} </p> 
   
         <form onSubmit={this.handleSubmit}>

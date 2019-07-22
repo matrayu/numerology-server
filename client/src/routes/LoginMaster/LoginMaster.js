@@ -19,7 +19,7 @@ export default class LoginMaster extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Sign In 🧙‍♂️</h1>
+        <h1>Sign In</h1>
         <LoginForm onLoginSuccess={this.handleLoginSuccess} />
       </React.Fragment>
     )

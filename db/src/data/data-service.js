@@ -1,8 +1,8 @@
 const xss = require('xss')
 const Treeize = require('treeize')
 
-const NumerologyDataService = {
-  getAllNumerologyData(db) {
+const DataService = {
+  getAllData(db) {
     return db
       .from('things AS thg')
       .select(
@@ -22,7 +22,7 @@ const NumerologyDataService = {
   },
 
   getById(db, id) {
-    return NumerologyDataService.getAllNumerologyData(db)
+    return DataService.getAllData(db)
       .where('thg.id', id)
       .first()
   },
@@ -61,4 +61,4 @@ const userFields = [
   'usr.date_modified AS user:date_modified',
 ]
 
-module.exports = NumerologyDataService
+module.exports = DataService

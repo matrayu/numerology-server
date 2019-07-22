@@ -8,7 +8,11 @@ Start nodemon for the application `npm run dev`
 
 Run the tests `npm test`
 
-Run debbugging experience `ndb start` 
+Run debbugging experience `ndb start`
+
+## Seeding
+
+`psql -U matrayu -d numerology -f ./db/seeds/seed.numerology_tables.sql`
 
 ## Deploying
 

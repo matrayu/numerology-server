@@ -8,6 +8,7 @@ import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import IdleService from '../../services/idle-service.js';
 import RegMaster from '../../routes/RegMaster/RegMaster';
+import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 
 import './App.css';
 
@@ -55,6 +56,7 @@ class App extends Component {
             <Route path={'/login'} component={LoginMaster} />
             <Route path={'/register'} component={RegMaster} />
             <Route path={'/numerology-chart'} component={NumerologlyReport} />
+            <Route component={NotFoundPage} />
           </Switch>
         </main>
       </div>

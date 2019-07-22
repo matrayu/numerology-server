@@ -1,4 +1,6 @@
-DROP TABLE IF EXISTS motivations;
+DROP TABLE IF EXISTS motivation;
+DROP TABLE IF EXISTS motivation_users;
+DROP TABLE IF EXISTS expression;
 DROP TABLE IF EXISTS inner_self;
 DROP TABLE IF EXISTS karmic_lessons;
 DROP TABLE IF EXISTS hidden_tendencies;

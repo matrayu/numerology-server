@@ -9,7 +9,6 @@ usersRouter
   .post('/', jsonBodyParser, (req, res, next) => {
 
     const { password, username, first_name, middle_name, last_name, dob } = req.body
-    console.log(req.body)
 
     for (const field of ['first_name', 'middle_name', 'last_name', 'username', 'password', 'dob'])
         if (!req.body[field])
@@ -27,8 +26,10 @@ usersRouter
         username
     )
         .then(hasUserWithUserName => {
-            if (hasUserWithUserName)
+            if (hasUserWithUserName) {
+                console.log("HAS USER NAME")
                 return res.status(400).json({ error: `Username already taken`})
+            }
 
             return UserService.hashPassword(password)
                 .then(hashedPassword => {
@@ -42,16 +43,26 @@ usersRouter
                         date_created: 'now()',
                     }
 
-                    return UserService.insertUser(
-                        req.app.get('db'),
-                        newUser
-                    )
+                    UserService.processUser(newUser)
                         .then(user => {
-                            res
-                                .status(201)
-                                .location(path.posix.join(req.originalUrl, `/${user.id}`))
-                                .json(UserService.serializeUser(user))
+                            newUser = {
+                                ...newUser,
+                                user
+                            }
                         })
+                        console.log(newUser, 'new user')
+
+                            return UserService.insertUser(
+                                req.app.get('db'),
+                                newUser
+                            )
+                                .then(user => {
+                                    res
+                                        .status(201)
+                                        .location(path.posix.join(req.originalUrl, `/${user.id}`))
+                                        .json(UserService.serializeUser(user))
+                                })
+                                .then()
                 })
         })
         .catch(next)

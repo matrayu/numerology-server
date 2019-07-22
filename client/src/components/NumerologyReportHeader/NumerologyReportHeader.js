@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './NumerologyReportHeader.css';
-const { numNameData, userStats, userDetails } = require('../seed');
+const { userStats, userDetails } = require('../seed');
 
 class NumerologyReportHeader extends Component {
     render() {

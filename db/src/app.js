@@ -6,7 +6,7 @@ const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
 const userRouter = require('./users/users-router')
 const authRouter = require('./auth/auth-router')
-const numerologyDataRouter = require('./numerology-data/numerology-data-router')
+const numDataRouter = require('./numData/numData-router')
 
 const app = express()
 
@@ -18,7 +18,7 @@ app.use(helmet())
 
 app.use('/api/users', userRouter)
 app.use('/api/auth', authRouter)
-app.use('/api/numerology-data', numerologyDataRouter)
+app.use('/api/numData', numDataRouter)
 
 app.use(function errorHandler(error, req, res, next) {
     let response
