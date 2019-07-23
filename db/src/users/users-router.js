@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const UserService = require('./users-service')
+const { processUser } = require('./users-helpers')
 
 const usersRouter = express.Router()
 const jsonBodyParser = express.json()
@@ -27,11 +28,10 @@ usersRouter
     )
         .then(hasUserWithUserName => {
             if (hasUserWithUserName) {
-                console.log("HAS USER NAME")
                 return res.status(400).json({ error: `Username already taken`})
             }
 
-            return UserService.hashPassword(password)
+            UserService.hashPassword(password)
                 .then(hashedPassword => {
                     const newUser = {
                         username,
@@ -43,26 +43,33 @@ usersRouter
                         date_created: 'now()',
                     }
 
-                    UserService.processUser(newUser)
-                        .then(user => {
-                            newUser = {
-                                ...newUser,
-                                user
-                            }
-                        })
-                        console.log(newUser, 'new user')
+                    const fullName = `${newUser.first_name} ${newUser.middle_name} ${newUser.last_name}`;
+                    const userData = processUser(fullName, newUser.dob);
 
-                            return UserService.insertUser(
-                                req.app.get('db'),
-                                newUser
+                    console.log(userDat)
+
+                    UserService.insertUser(
+                        req.app.get('db'),
+                        newUser
+                    )
+                        .then(user => {
+                            UserService.insertMotivation(user, userData
+
                             )
-                                .then(user => {
-                                    res
-                                        .status(201)
-                                        .location(path.posix.join(req.originalUrl, `/${user.id}`))
-                                        .json(UserService.serializeUser(user))
-                                })
-                                .then()
+                        })
+                        /* .then(res => {
+                            const fullName = `${newUser.first_name} ${newUser.middle_name} ${newUser.last_name}`
+                            const dob = newUser.dob
+                            console.log(processUser(fullName, dob))
+
+                        }) */
+                        .then(user => {
+                            res
+                                .status(201)
+                                .location(path.posix.join(req.originalUrl, `/${user.id}`))
+                                .json(UserService.serializeUser(user))
+                        })
+                        
                 })
         })
         .catch(next)

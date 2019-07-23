@@ -15,6 +15,7 @@ export default class RegStep2 extends Component {
                     name="dob"
                     type="date"
                     placeholder="Enter password"
+                    value="1979-08-05"
                     onChange={props.handleChange}
                 />      
             </div>

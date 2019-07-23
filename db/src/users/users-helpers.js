@@ -6,22 +6,35 @@ const letterCode = {
     y: 7, z: 8,
 }
 
-function processName(first,middle,last) {
-    const fullName = fullName.concat(first," ",middle," ",last)
-    const vowels = fullName.replace(/[^aeiouy]/ig, "");
-    const consonants = fullName.replace(/[^bcdfghjklmnpqrstvwxyz]/ig, "");
+const UserHelper = {
+    processUser(name, dob) {
+    //const full_name = full_name.concat(first," ",middle," ",last)
+    
+        const vowels = name.replace(/[^aeiou]/ig, "");
+        const consonants = name.replace(/[^bcdfghjklmnpqrstvwxyz]/ig, "");
+        const output = {
+            motivation: getMotivation(vowels),
+            innerSelf: getInnerSelf(consonants),
+            expression: getExpression(name),
+            karmicLessons: getKarmicHiddenSubconscious(name).karmicLessons,
+            hiddenTendencies: getKarmicHiddenSubconscious(name).hiddenTendencies,
+            subconciousResponse: getKarmicHiddenSubconscious(name).subconciousResponse,
+            firstLifeCycle: getFirstLifeCycle(dob),
+            secondLifeCycle: getSecondLifeCycle(dob),
+            thirdLifeCycle: getThirdLifeCycle(dob),
+            firstTurningPoint: getFirstTurningPoint(dob),
+            secondTurningPoint: getSecondTurningPoint(dob),
+            thirdtTurningPoint: getThirdTurningPoint(dob),
+            fourthTurningPoint: getFourthTurningPoint(dob),
+            firstMinorChallenge: getfirstMinorChallenge(dob),
+            secondMinorChallenge: getsecondMinorChallenge(dob),
+            majorChallenge: getMajorChallenge(dob)
 
-    const output = {
-        motivation: getMotivation(vowels),
-        innerSelf: getInnerSelf(consonants),
-        expression: getExpression(fullName),
-        karmicLessons: getKarmicHiddenSubconscious(fullName).karmicLessons,
-        hiddenTendencies: getKarmicHiddenSubconscious(fullName).hiddenTendencies,
-        subconciousResponse: getKarmicHiddenSubconscious(fullName).subconciousResponse
+        }
+
+        return output
     }
-
-    return output
-}
+}   
 
 function getMotivation(vowels) {
     let total = 0
@@ -185,7 +198,7 @@ function getThirdLifeCycle(dob) {
     return thirdCycle
 }
 
-function getLifeCycles(dob) {
+/* function getLifeCycles(dob) {
     const lifeCycles = {
         firstLifeCycle: getFirstLifeCycle(dob),
         secondLifeCycle: getSecondLifeCycle(dob),
@@ -193,7 +206,7 @@ function getLifeCycles(dob) {
     }
 
     return lifeCycles
-}
+} */
 
 function getFirstTurningPoint(dob) {
     let firstTurningPoint = []
@@ -238,7 +251,7 @@ function getFourthTurningPoint(dob) {
     return fourthTurningPoint
 }
 
-function getTurningPoints(dob) {
+/* function getTurningPoints(dob) {
     let turningPoints = []
     turningPoints.push(
         getFirstTurningPoint(dob),
@@ -248,7 +261,7 @@ function getTurningPoints(dob) {
     )
 
     return turningPoints
-}
+} */
 
 function getfirstMinorChallenge(dob) {
     let month = parseInt(splitDob(dob)[1])
@@ -295,7 +308,7 @@ function getMajorChallenge(dob) {
     }
 }
 
-function getChallenges(dob) {
+/* function getChallenges(dob) {
     let challenges = []
         challenges.push(
         getfirstMinorChallenge(dob),
@@ -305,11 +318,8 @@ function getChallenges(dob) {
 
     return challenges
 
-}
+} */
 
-module.exports = {
-    processName,
-    getLifeCycles,
-    getTurningPoints,
-    getChallenges
-}
+
+module.exports = UserHelper
+

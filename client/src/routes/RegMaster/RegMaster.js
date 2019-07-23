@@ -16,15 +16,15 @@ export default class RegMaster extends Component {
 
     state = {
         currentStep: 1,
-        email:  '',
+        email:  'tester@aol.com',
         username: '',
-        password: '',
-        confirmPassword: '',
+        password: 'Tester12#',
+        confirmPassword: 'Tester12#',
         passwordMatch: '',
-        first_name: '',
-        middle_name: '',
-        last_name: '',
-        dob: null,
+        first_name: 'Kobe',
+        middle_name: 'Bean',
+        last_name: 'Bryant',
+        dob: "1979-08-03",
         error: null  
     }
 

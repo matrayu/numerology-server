@@ -12,12 +12,25 @@ const UserService = {
             .then(user => !!user)
     },
 
-    insertUser(db, newUser) {
+    insertUser(db, newUser, userData) {
         return db
             .insert(newUser)
             .into('users')
             .returning('*')
             .then(([user]) => user)
+    },
+
+    insertMotivation(db, motivation) {
+        return db
+            .insert(newUser)
+            .into('users')
+            .returning('*')
+            .then(([user]) => user)
+    },
+
+    insertUserData(db, userData) {
+        return db
+            .insert(userData.motivation)
     },
 
     validatePassword(password) {
@@ -51,11 +64,6 @@ const UserService = {
             date_created: new Date(user.date_created)
         }
     },
-
-    processUser(user) {
-        UserHelpers.processName(user.first_name, user.middle_name, user.last_name)
-    }
-
 
 }
 

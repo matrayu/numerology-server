@@ -23,21 +23,21 @@ class HomeSplash extends Component {
                     </div>
                     <div>
                         <div className='card'>
-                            <img src="https://picsum.photos/200" alt="Card 1" class="img"></img>
+                            <img src="https://picsum.photos/200" alt="Card 1" className="img"></img>
                             <div className='card__text'>
                                 <p>Experience numerology</p>
                                 <p>Come take a journey and experience the wonders of numerology, combining ancient wisdom and 21st century technology.</p>
                             </div>
                         </div>
                         <div className='card'>
-                            <img src="https://picsum.photos/201" alt="Card 2" class="img"></img>
+                            <img src="https://picsum.photos/201" alt="Card 2" className="img"></img>
                             <div className='card__text'>
                                 <p>Deep Insights</p>
                                 <p>Using just two data points, you'll create an interactive numerology chart, unlocking a welth of infomation about your personality, your inner self, what makes you tick, where your hidden talents lie, and so much more.</p>
                             </div>
                         </div>
                         <div className='card'>
-                            <img src="https://picsum.photos/202" alt="Card 3" class="img"></img>
+                            <img src="https://picsum.photos/202" alt="Card 3" className="img"></img>
                             <div className='card__text'>
                                 <p>Card 3 Text</p>
                                 <p>Card 3 Subtext</p>
@@ -56,12 +56,12 @@ class HomeSplash extends Component {
                                 <p>The numbers hidden in your name describe your personality, your inner self, what makes you tick, how others see you, and wehre your hidden talets lie.</p>
                             </div>
                             <div>
-                                <img src="https://picsum.photos/300" alt="How It Works 1" class="img"></img>
+                                <img src="https://picsum.photos/300" alt="How It Works 1" className="img"></img>
                             </div>
                         </div>
                         <div>
                             <div>
-                                <img src="https://picsum.photos/301" alt="How It Works 1" class="img"></img>
+                                <img src="https://picsum.photos/301" alt="How It Works 1" className="img"></img>
                             </div>
                             <div>
                                 <p>Opportunity</p>

@@ -25,7 +25,7 @@ export default class RegStep1 extends Component {
                     name="email"
                     type="email"
                     placeholder="Enter email"
-                    value={props.email}
+                    value=/* {props.email} */"tester@aol.com"
                     onChange={props.handleChange}
                 />
     
@@ -36,7 +36,7 @@ export default class RegStep1 extends Component {
                     name="password"
                     type="password"
                     placeholder="Enter password"
-                    value={props.password}
+                    value=/* {props.password} */"Tester12#"
                     onChange={props.handleChange}
                 /> 
     
@@ -47,7 +47,7 @@ export default class RegStep1 extends Component {
                     name="confirmPassword"
                     type="password"
                     placeholder="Confirm password"
-                    value={props.confirmPassword}
+                    value=/* {props.confirmPassword} */"Tester12#"
                     onChange={props.handleChange}
                 /> 
             </div>

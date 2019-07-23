@@ -15,7 +15,7 @@ export default class RegStep2 extends Component {
                 name="first_name"
                 type="text"
                 placeholder="Enter first name"
-                value={props.first_name}
+                value=/* {props.first_name} */"Kobe"
                 onChange={props.handleChange}
             />
     
@@ -26,7 +26,7 @@ export default class RegStep2 extends Component {
                 name="middle_name"
                 type="text"
                 placeholder="Enter middle name"
-                value={props.middle_name}
+                value=/* {props.middle_name} */"Bean"
                 onChange={props.handleChange}
             />
     
@@ -37,7 +37,7 @@ export default class RegStep2 extends Component {
                 name="last_name"
                 type="text"
                 placeholder="Enter last name"
-                value={props.last_name}
+                value=/* {props.last_name} */"Bryant"
                 onChange={props.handleChange}
             /> 
             </div>
