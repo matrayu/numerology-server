@@ -26,7 +26,7 @@ const UserService = {
             .into('motivation_users')
             .returning('*')
 
-        console.log('here')
+        console.log('insertMotivation')
         //db.insert({ user: motivation }).into('motivation_users').returning('*').then(([user]) => user)
     },
 
