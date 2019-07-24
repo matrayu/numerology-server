@@ -1,6 +1,6 @@
 const xss = require('xss')
 const bcrypt = require('bcryptjs')
-const UserHelpers = require('./users-helpers')
+//const UserHelpers = require('./users-helpers')
 
 const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/
 
@@ -12,7 +12,7 @@ const UserService = {
             .then(user => !!user)
     },
 
-    insertUser(db, newUser, userData) {
+    insertUser(db, newUser) {
         return db
             .insert(newUser)
             .into('users')
@@ -20,12 +20,14 @@ const UserService = {
             .then(([user]) => user)
     },
 
-    insertMotivation(db, motivation) {
-        return db
-            .insert(newUser)
-            .into('users')
+    insertMotivation(db, uid, moid) {
+        db
+            .insert({ [uid]: moid })
+            .into('motivation_users')
             .returning('*')
-            .then(([user]) => user)
+
+        console.log('here')
+        //db.insert({ user: motivation }).into('motivation_users').returning('*').then(([user]) => user)
     },
 
     insertUserData(db, userData) {
