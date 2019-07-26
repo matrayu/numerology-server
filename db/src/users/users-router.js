@@ -47,31 +47,14 @@ usersRouter
                     const userData = processUser(fullName, newUser.dob);
                     const db = req.app.get('db')
 
-                    UserService.insertUser(db,newUser)
+                    UserService.insertUser(db,newUser,userData)
                         .then(user => {
-                            const userId = user.id
-                            const mot = {
-                                [userId]: userData.motivation
-                            }
-                            UserService.insertMotivation(db, userId, userData.motivation)
-                            res.json(UserService.serializeUser(user))  
-                        })
-                        /* .then(res => {
-                            const fullName = `${newUser.first_name} ${newUser.middle_name} ${newUser.last_name}`
-                            const dob = newUser.dob
-                            console.log(processUser(fullName, dob))
-
-                        }) */
-                        /* .then(user => {
                             res
                                 .status(201)
                                 .location(path.posix.join(req.originalUrl, `/${user.id}`))
-                                .json(UserService.serializeUser(user))
-                                .then(user => {
-                                    UserService.insertMotivation(user, userData.motivation)
-                                })
-                            return user
-                        }) */
+                                .json(user)
+                            console.log(user)
+                        })
                         
         })
         .catch(next)

@@ -28,12 +28,18 @@ INSERT INTO motivation (motivation_number, motivation_content) VALUES
 ,(11,'Content for motivation value 11')
 ,(22,'Content for motivation value 22');
 
-INSERT INTO motivation_users (user_id, motivation_number) VALUES 
-(1,1)
-,(2,1)
-,(3,5)
-,(4,7)
-,(5,11)
-,(6,22);
+INSERT INTO inner_self (inner_self_number, inner_self_content) VALUES 
+(1,'Content for inner self value 1')
+,(2,'Content for inner self value 2')
+,(3,'Content for inner self value 3')
+,(4,'Content for inner self value 4')
+,(5,'Content for inner self value 5')
+,(6,'Content for inner self value 6')
+,(7,'Content for inner self value 7')
+,(8,'Content for inner self value 8')
+,(9,'Content for inner self value 9')
+,(11,'Content for inner self value 11')
+,(22,'Content for inner self value 22');
+
 
 COMMIT;

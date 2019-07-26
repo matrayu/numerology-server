@@ -12,22 +12,46 @@ const UserService = {
             .then(user => !!user)
     },
 
-    insertUser(db, newUser) {
-        return db
+    insertUser(db, newUser, userData) {
+        let userID;
+        let finalUser;
+        db
             .insert(newUser)
             .into('users')
             .returning('*')
             .then(([user]) => user)
+            .then(user => {
+                userID = user.id;
+                finalUser = user;
+                finalUser.data = userData;
+                return this.insertMotivation(db, user.id, userData.motivation)
+            })
+            .then(res => {
+                console.log('~~~~~done inserting Motivation');
+                return this.insertInnerSelf(db, userID, userData.innerSelf)
+            })
+            .then(res => {
+                console.log('~~~~~~~ done inserting InnerSelf')
+            })
+        return finalUser;
     },
 
     insertMotivation(db, uid, moid) {
-        db
-            .insert({ [uid]: moid })
-            .into('motivation_users')
-            .returning('*')
+        return db
+            .insert({ 
+                'user_id': uid, 
+                'motivation_number': moid 
+            })
+            .into('motivation_users');
+    },
 
-        console.log('insertMotivation')
-        //db.insert({ user: motivation }).into('motivation_users').returning('*').then(([user]) => user)
+    insertInnerSelf(db, uid, innerSelfId) {
+        return db
+            .insert({ 
+                'user_id': uid, 
+                'inner_self_number': innerSelfId 
+            })
+            .into('inner_self_users')
     },
 
     insertUserData(db, userData) {

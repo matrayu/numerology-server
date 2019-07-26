@@ -4,14 +4,18 @@ CREATE TABLE motivation (
 );
 
 CREATE TABLE motivation_users (
-  user_id INTEGER REFERENCES users(id),
+  user_id INTEGER PRIMARY KEY REFERENCES users(id),
   motivation_number INTEGER REFERENCES motivation(motivation_number)
 );
 
 CREATE TABLE inner_self (
-  inner_self_id SERIAL PRIMARY KEY,
-  inner_self_number INTEGER,
+  inner_self_number INTEGER PRIMARY KEY UNIQUE,
   inner_self_content TEXT
+);
+
+CREATE TABLE inner_self_users (
+  user_id INTEGER PRIMARY KEY REFERENCES users(id),
+  inner_self_number INTEGER REFERENCES inner_self(inner_self_number)
 );
 
 CREATE TABLE expression (
