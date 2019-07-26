@@ -45,15 +45,15 @@ usersRouter
 
                     const fullName = `${newUser.first_name} ${newUser.middle_name} ${newUser.last_name}`;
                     const userData = processUser(fullName, newUser.dob);
-                    const db = req.app.get('db')
+                    const db = req.app.get('db');
 
                     UserService.insertUser(db,newUser,userData)
                         .then(user => {
+                            console.log(user)
                             res
                                 .status(201)
                                 .location(path.posix.join(req.originalUrl, `/${user.id}`))
                                 .json(user)
-                            console.log(user)
                         })
                         
         })

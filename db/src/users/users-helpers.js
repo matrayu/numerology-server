@@ -19,6 +19,7 @@ const UserHelper = {
             karmicLessons: getKarmicHiddenSubconscious(name).karmicLessons,
             hiddenTendencies: getKarmicHiddenSubconscious(name).hiddenTendencies,
             subconciousResponse: getKarmicHiddenSubconscious(name).subconciousResponse,
+            destiny: getDestinyNumber(dob),
             firstLifeCycle: getFirstLifeCycle(dob),
             secondLifeCycle: getSecondLifeCycle(dob),
             thirdLifeCycle: getThirdLifeCycle(dob),

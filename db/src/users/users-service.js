@@ -13,7 +13,7 @@ const UserService = {
     },
 
     insertUser(db, newUser, userData) {
-        let userID;
+        let userId;
         let finalUser;
         db
             .insert(newUser)
@@ -21,17 +21,17 @@ const UserService = {
             .returning('*')
             .then(([user]) => user)
             .then(user => {
-                userID = user.id;
+                userId = user.id;
                 finalUser = user;
                 finalUser.data = userData;
                 return this.insertMotivation(db, user.id, userData.motivation)
             })
             .then(res => {
                 console.log('~~~~~done inserting Motivation');
-                return this.insertInnerSelf(db, userID, userData.innerSelf)
+                return this.insertInnerSelf(db, userId, userData.innerSelf)
             })
             .then(res => {
-                console.log('~~~~~~~ done inserting InnerSelf')
+                console.log(userId, finalUser)
             })
         return finalUser;
     },
