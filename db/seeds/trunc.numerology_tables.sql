@@ -1,4 +1,3 @@
 TRUNCATE
-  motivation,
   users
   RESTART IDENTITY CASCADE;
