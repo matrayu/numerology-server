@@ -49,7 +49,6 @@ usersRouter
 
                     UserService.insertUser(db,newUser,userData)
                         .then(user => {
-                            console.log(user)
                             res
                                 .status(201)
                                 .location(path.posix.join(req.originalUrl, `/${user.id}`))

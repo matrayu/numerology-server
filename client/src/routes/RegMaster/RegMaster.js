@@ -24,7 +24,7 @@ export default class RegMaster extends Component {
         first_name: 'Kobe',
         middle_name: 'Bean',
         last_name: 'Bryant',
-        dob: "1979-08-03",
+        dob: "1979-08-05",
         error: null  
     }
 
@@ -127,7 +127,7 @@ export default class RegMaster extends Component {
 
     renderStep3() {
         return (
-            <RegStep3
+            <RegStep3 //why isn't this changing (works correctly)
                 currentStep={this.state.currentStep} 
                 handleChange={this.handleChange}
                 dob={this.state.dob}

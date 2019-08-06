@@ -6,36 +6,83 @@ const letterCode = {
     y: 7, z: 8,
 }
 
+const astroInfluence = {
+    1: [0,12,24,36,48,60,72,84],
+    12: [1,13,25,37,49,61,73,85],
+    11: [2,14,26,38,50,62,74,86],
+    10: [3,15,27,39,51,63,75,87], 
+    9: [4,16,28,40,52,64,76,88],
+    8: [5,17,29,41,53,65,77,89],
+    7: [6,18,30,42,54,66,78,90],
+    6: [7,19,31,43,55,67,79,91],
+    5: [8,20,32,44,56,68,80,92],
+    4: [9,21,33,45,57,69,81,93],
+    3: [10,22,34,46,58,70,82,94],
+    2: [11,23,35,47,59,71,83,95],
+}
+
 const UserHelper = {
     processUser(name, dob) {
     //const full_name = full_name.concat(first," ",middle," ",last)
     
         const vowels = name.replace(/[^aeiou]/ig, "");
         const consonants = name.replace(/[^bcdfghjklmnpqrstvwxyz]/ig, "");
+        const date = new Date();
+        const year = date.getFullYear();
         const output = {
             motivation: getMotivation(vowels),
-            innerSelf: getInnerSelf(consonants),
+            inner_self: getInnerSelf(consonants),
             expression: getExpression(name),
-            karmicLessons: getKarmicHiddenSubconscious(name).karmicLessons,
-            hiddenTendencies: getKarmicHiddenSubconscious(name).hiddenTendencies,
-            subconciousResponse: getKarmicHiddenSubconscious(name).subconciousResponse,
+            karmic_lessons: getKarmicHiddenSubconscious(name).karmicLessons,
+            hidden_tendencies: getKarmicHiddenSubconscious(name).hiddenTendencies,
+            subconscious_response: getKarmicHiddenSubconscious(name).subconciousResponse,
             destiny: getDestinyNumber(dob),
-            firstLifeCycle: getFirstLifeCycle(dob),
-            secondLifeCycle: getSecondLifeCycle(dob),
-            thirdLifeCycle: getThirdLifeCycle(dob),
-            firstTurningPoint: getFirstTurningPoint(dob),
-            secondTurningPoint: getSecondTurningPoint(dob),
-            thirdtTurningPoint: getThirdTurningPoint(dob),
-            fourthTurningPoint: getFourthTurningPoint(dob),
-            firstMinorChallenge: getfirstMinorChallenge(dob),
-            secondMinorChallenge: getsecondMinorChallenge(dob),
-            majorChallenge: getMajorChallenge(dob)
-
+            first_lifecycle: getFirstLifeCycle(dob),
+            second_lifecycle: getSecondLifeCycle(dob),
+            third_lifecycle: getThirdLifeCycle(dob),
+            first_turning_point: getFirstTurningPoint(dob),
+            second_turning_point: getSecondTurningPoint(dob),
+            third_turning_point: getThirdTurningPoint(dob),
+            fourth_turning_point: getFourthTurningPoint(dob),
+            first_minor_challenge: getfirstMinorChallenge(dob),
+            second_minor_challenge: getsecondMinorChallenge(dob),
+            major_challenge: getMajorChallenge(dob),
+            personal_year: getPersonalYear(dob, year),
+            astrological_influence: getAstroInfluence(astroInfluence, dob)
         }
 
         return output
     }
-}   
+}
+
+function getAstroInfluence(obj, dob) {
+    let age = getAge(dob)
+    let arr
+    for (const prop in obj) {
+      arr = (obj[prop])
+      if (arr.includes(age)) {
+        return parseInt(prop)
+      }
+    }
+}
+
+function getPersonalYear(dob, year) {
+    let dobArr = splitDob(dob)
+    let sum = dobArr[1] + dobArr[2] + year
+    let personalYear = reduceNum(sum)
+    return personalYear  
+}
+
+function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
 
 function getMotivation(vowels) {
     let total = 0
