@@ -8,13 +8,12 @@ import './NumerologyReport.css';
 export default class NumerologyReport extends Component {
     static contextType = NumReportContext
 
-    componentDidMount() {
+    /* componentDidMount() {
         this.context.clearError()
         NumApiService.getUserData()
-    }
+    } */
 
     render() {
-        console.log(this.context.userData)
         const { error } = this.context
         return (
             <section className='NumerologyReport'>

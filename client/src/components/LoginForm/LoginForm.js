@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NumReportContext from '../../contexts/NumReportContext'
 //import { Button, Input } from '../Utils/Utils'
 import AuthApiService from '../../services/auth-api-service'
 import './LoginForm.css';
@@ -7,11 +8,14 @@ export default class LoginForm extends Component {
     static defaultProps = {
       onLoginSuccess: () => {}
     }
+
+    static contextType = NumReportContext
   
     state = { 
       error: null,
-      username: null,
-      password: null 
+      //username and password set to null
+      username: 'tester12',
+      password: 'Tester12#' 
     }
 
     handleChange = event => {
@@ -28,6 +32,7 @@ export default class LoginForm extends Component {
         password: password.value,
       })
         .then(res => {
+          this.context.setUserData(res.userData)
           username.value = ''
           password.value = ''
           this.props.onLoginSuccess()
@@ -50,7 +55,8 @@ export default class LoginForm extends Component {
                 name="username"
                 type="text"
                 placeholder="Enter username"
-                value={props.username}
+                //value set to 'props.username'
+                value={this.state.username}
                 onChange={this.handleChange}
             />
 
@@ -61,7 +67,8 @@ export default class LoginForm extends Component {
                   name="password"
                   type="password"
                   placeholder="Enter password"
-                  value={props.password}
+                  //value set to 'props.username'
+                  value={this.state.password}
                   onChange={this.handleChange}
               />
           </div>

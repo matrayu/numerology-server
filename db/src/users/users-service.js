@@ -20,6 +20,26 @@ const UserService = {
             .then(([user]) => user)
     },
 
+    getUserDataBasic(db, userId) {
+        return db('users')
+            .where({ id: userId })
+            .select(
+                'motivation',
+                'inner_self',
+                'expression',
+                'karmic_lessons',
+                'hidden_tendencies',
+                'subconscious_response',
+                'first_name',
+                'middle_name',
+                'last_name',
+                'dob',
+                'id',
+                'username',
+            )
+            .then(([user]) => user)
+    },
+
     validatePassword(password) {
         if (password.length < 8) {
             return 'Password must be longer than 8 characters'
