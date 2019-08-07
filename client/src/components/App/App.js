@@ -9,12 +9,15 @@ import AuthApiService from '../../services/auth-api-service';
 import IdleService from '../../services/idle-service.js';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import NumReportContext from '../../contexts/NumReportContext'
 
 import './App.css';
 
 class App extends Component {
   state = { hasError: false }
 
+  static contextType = NumReportContext
+  
   static getDerivedStateFromError(error) {
     console.error(error)
     return { hasError: true }

@@ -10,10 +10,8 @@ class HomeSplash extends Component {
             <main className='main-wrapper' role="main">
                 <section className='section'>
                     <div>
-                        <h1>
-                            <span>What is Numerology?</span>
-                            <span>Numerology is technology dating back many centuries, to at least Pythagoras in the sixth century B.C., and probably even farther back to the peoples of ancient Egypt, China or India.</span>
-                        </h1>
+                        <h1>What is Numerology?</h1>
+                        <h3>Numerology is technology dating back many centuries, to at least Pythagoras in the sixth century B.C., and probably even farther back to the peoples of ancient Egypt, China or India.</h3>
                     </div>
                 </section>
                 <section className='section'>

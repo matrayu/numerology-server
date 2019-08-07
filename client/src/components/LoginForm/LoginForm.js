@@ -12,16 +12,9 @@ export default class LoginForm extends Component {
     static contextType = NumReportContext
   
     state = { 
-      error: null,
-      //username and password set to null
-      username: 'tester12',
-      password: 'Tester12#' 
+      error: null
     }
 
-    handleChange = event => {
-      const {name, value} = event.target
-      this.setState({ [name]: value })   
-    }
   
     handleSubmitJwtAuth = ev => {
       ev.preventDefault()
@@ -33,6 +26,7 @@ export default class LoginForm extends Component {
       })
         .then(res => {
           this.context.setUserData(res.userData)
+          this.context.setLogin()
           username.value = ''
           password.value = ''
           this.props.onLoginSuccess()
@@ -55,9 +49,7 @@ export default class LoginForm extends Component {
                 name="username"
                 type="text"
                 placeholder="Enter username"
-                //value set to 'props.username'
-                value={this.state.username}
-                onChange={this.handleChange}
+                value={props.username}
             />
 
             <label htmlFor="password">Password</label>
@@ -67,9 +59,7 @@ export default class LoginForm extends Component {
                   name="password"
                   type="password"
                   placeholder="Enter password"
-                  //value set to 'props.username'
-                  value={this.state.password}
-                  onChange={this.handleChange}
+                  value={props.password}
               />
           </div>
           <button className="btn btn-success btn-block">Log In</button>

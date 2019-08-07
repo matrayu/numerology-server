@@ -13,6 +13,7 @@ export default class RegistrationPage extends Component {
         const { history } = this.props
         this.context.clearError()
         this.context.setUserData(userData)
+        this.context.setLogin()
         history.push('/numerology-chart')
     }
 

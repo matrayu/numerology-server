@@ -3,9 +3,11 @@ import React, { Component } from 'react'
 const NumReportContext = React.createContext({
   userData: [],
   error: null,
+  isLoggedIn: false,
   setError: () => {},
   clearError: () => {},
   setUserData: () => {},
+  setLogin: () => {},
 })
 export default NumReportContext
 
@@ -13,10 +15,15 @@ export class NumReportProvider extends Component {
   state = {
     userData: [],
     error: null,
+    isLoggedIn: false,
   };
 
+  setLogin = () => {
+    let log = !this.state.isLoggedIn
+    this.setState({ isLoggedIn: log })
+  }
+
   setUserData = userData => {
-    console.log(userData)
     this.setState({ userData })
   }
 
@@ -33,9 +40,11 @@ export class NumReportProvider extends Component {
     const value = {
       userData: this.state.userData,
       error: this.state.error,
+      isLoggedIn: this.state.isLoggedIn,
       setError: this.setError,
       clearError: this.clearError,
       setUserData: this.setUserData,
+      setLogin: this.setLogin,
     }
     return (
       <NumReportContext.Provider value={value}>
