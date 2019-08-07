@@ -3,15 +3,17 @@ import RegStep1 from '../../components/RegStep1/RegStep1';
 import RegStep2 from '../../components/RegStep2/RegStep2';
 import RegStep3 from '../../components/RegStep3/RegStep3';
 import AuthApiService from '../../services/auth-api-service'
-import './RegMaster.css'
+import NumReportContext from '../../contexts/NumReportContext'
+import './RegistrationPage.css'
 
-export default class RegMaster extends Component {
-    static defaultProps = {
-        onRegistrationSuccess: () => {}
-    }
+export default class RegistrationPage extends Component {
+    static contextType = NumReportContext
 
-    static defaultProps = {
-
+    setUserDataContext(userData) {
+        const { history } = this.props
+        this.context.clearError()
+        this.context.setUserData(userData)
+        history.push('/numerology-chart')
     }
 
     state = {
@@ -58,7 +60,7 @@ export default class RegMaster extends Component {
                 email: null,
                 dob: null
             })
-            this.props.onRegistrationSuccess()
+            this.setUserDataContext(user)
         })
         .catch(res => {
             console.log(res.error)

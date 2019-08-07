@@ -2,8 +2,8 @@ import config from '../config'
 //import TokenService from '../services/token-service'
 
 const NumApiService = {
-    getMotivation(userId) {
-        return fetch(`${config.API_ENDPOINT}/motivation/${motivationId}`, {
+    getUserData(userId) {
+        return fetch(`${config.API_ENDPOINT}/numerology-report/${userId}`, {
           /* headers: {
             'authorization': `bearer ${TokenService.getAuthToken()}`,
           }, */

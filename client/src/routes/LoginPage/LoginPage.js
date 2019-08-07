@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
-import './LoginMaster.css';
+import './LoginPage.css';
 
-export default class LoginMaster extends Component {
+export default class LoginPage extends Component {
   static defaultProps = {
     location: {},
     history: {
@@ -18,10 +18,10 @@ export default class LoginMaster extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1>Sign In</h1>
+      <section className='LoginPage'>
+        <h2>Sign In</h2>
         <LoginForm onLoginSuccess={this.handleLoginSuccess} />
-      </React.Fragment>
+      </section>
     )
   }
 }

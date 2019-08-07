@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import HomeSplash from '../HomeSplash/HomeSplash';
-import LoginMaster from '../../routes/LoginMaster/LoginMaster';
+import LoginPage from '../../routes/LoginPage/LoginPage';
 import NumerologlyReport from '../NumerologyReport/NumerologyReport';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import IdleService from '../../services/idle-service.js';
-import RegMaster from '../../routes/RegMaster/RegMaster';
+import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 
 import './App.css';
@@ -53,8 +53,8 @@ class App extends Component {
         {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
           <Switch>
             <Route exact path={'/'} component={HomeSplash} />
-            <Route path={'/login'} component={LoginMaster} />
-            <Route path={'/register'} component={RegMaster} />
+            <Route path={'/login'} component={LoginPage} />
+            <Route path={'/register'} component={RegistrationPage} />
             <Route path={'/numerology-chart'} component={NumerologlyReport} />
             <Route component={NotFoundPage} />
           </Switch>
