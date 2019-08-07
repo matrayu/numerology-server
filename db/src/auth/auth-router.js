@@ -36,10 +36,11 @@ authRouter.post('/login', jsonBodyParser, (req, res, next) => {
                     //***** */TJ - why do I need to return this instead of creating a variable
                     return UserService.getUserDataBasic(db,dbUser.id)
                         .then(userData => {
-                            res.send({
-                                authToken: token,
-                                userData: userData
-                            })
+                            res
+                                .send({
+                                    authToken: token,
+                                    userData: userData
+                                })
                         })
                 })
     })

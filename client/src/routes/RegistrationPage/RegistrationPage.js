@@ -60,7 +60,7 @@ export default class RegistrationPage extends Component {
                 email: null,
                 dob: null
             })
-            this.setUserDataContext(user)
+            this.setUserDataContext(user.userData)
         })
         .catch(res => {
             console.log(res.error)

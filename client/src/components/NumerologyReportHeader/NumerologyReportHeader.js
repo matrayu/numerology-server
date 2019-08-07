@@ -8,7 +8,8 @@ class NumerologyReportHeader extends Component {
     
 
     render() {
-        const { userData = [] } = this.context
+        const { userData } = this.context
+        console.log(userData)
         let date = new Date(userData.dob)
         let dob = `${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`
 
