@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 import NumReportContext from '../../contexts/NumReportContext'
 import NumerologyReportData from '../NumerologyReportData/NumerologyReportData';
 import NumerologyReportHeader from '../NumerologyReportHeader/NumerologyReportHeader';
+import NumApiService from '../../services/num-api-service'
 import './NumerologyReport.css';
 
 export default class NumerologyReport extends Component {
     static contextType = NumReportContext
 
+    componentDidMount() {
+        this.context.clearError()
+        NumApiService.getUserData()
+    }
+
     render() {
+        console.log(this.context.userData)
         const { error } = this.context
         return (
             <section className='NumerologyReport'>

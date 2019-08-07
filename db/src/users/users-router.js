@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const UserService = require('./users-service')
+const AuthService = require('../auth/auth-service')
 const { processUser } = require('./users-helpers')
 
 const usersRouter = express.Router()
@@ -49,7 +50,13 @@ usersRouter
 
                     UserService.insertUser(db,newUser,userData)
                         .then(user => {
+                            const sub = user.username
+                            const payload = { user_id: user.id }
+
                             res
+                                .send({
+                                    authToken: AuthService.createJwt(sub, payload)
+                                })
                                 .status(201)
                                 .location(path.posix.join(req.originalUrl, `/${user.id}`))
                                 .json(user)

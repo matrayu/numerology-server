@@ -45,6 +45,15 @@ const AuthApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             )
+            .then(res => {
+                console.log(res)
+                TokenService.saveAuthToken(res.authToken)
+                IdleService.regiserIdleTimerResets()
+                TokenService.queueCallbackBeforeExpiry(() => {
+                    AuthApiService.postRefreshToken()
+                })
+                return res
+            })
     },
     postRefreshToken() {
         return fetch(`${config.API_ENDPOINT}/auth/refresh`, {
