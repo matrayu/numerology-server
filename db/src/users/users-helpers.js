@@ -151,7 +151,7 @@ function getKarmicHiddenSubconscious(allLetters) {
     }
 
     for (let prop in numObject) {
-        if (numObject[prop] === 4) {
+        if (numObject[prop] === 0) {
         karmicLessons.push(prop)
         }
     }
