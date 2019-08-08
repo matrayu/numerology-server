@@ -41,45 +41,37 @@ const expression = {
 }
 
 const karmicLessons = {
-    1: 'Mollit reprehenderit consectetur sint culpa ipsum voluptate voluptate',
-    2: 'Consectetur magna culpa consectetur pariatur amet cupidatat',
-    3: 'Anim amet enim culpa eu.',
-    4: 'Officia irure duis ut veniam aliqua proident exercitation eiusmod qui sunt culpa.',
-    5: 'Amet veniam excepteur nulla qui id cupidatat incididunt et fugiat duis proident qui.',
-    6: 'Sit ea excepteur ea eiusmod sit tempor eiusmod ullamco cupidatat velit veniam reprehenderit laborum.',
-    7: 'Sit laboris et duis deserunt minim dolor exercitation reprehenderit sunt aute.',
-    8: 'Id aliqua voluptate enim duis officia.',
-    9: 'Et ipsum excepteur incididunt fugiat dolor velit in ullamco eu.',
-    11: 'Pariatur nisi et commodo mollit elit tempor proident velit dolor in reprehenderit.',
-    22: 'Tempor pariatur sint magna et quis dolor ullamco.',
+    1: '1 is the lesson of "Individulaity". You must learn to stand alone, to think openly and freely. Until this lesson is learned, you will constantly be forced into situations where you must make your own decisions.',
+    2: '2 is the lesson of "Tact, Patience, and Cooperation". You must learn not to overlook small details. Until this lesson is learned, life will constanly force you into situations where you cannot achieve anything unless you are patient, cooperative, and observant.',
+    3: '3 is the lesson of "Self-Expression". You must learnto have confidence in yourself. Until this lesson is learned, life will constantly force you into situations where you will lose all that you want unless you come out of your shell and express yourself openly.',
+    4: '4 is the lesson of "Hard Work". Until you learn this lesson, life will not let you accomplish anything unless you work carefully for it. Any attempt to take short cuts or speed things along will result in loss.',
+    5: '5 is the lesson of "Understanding and Adaptability". You must learn to be tolerant, to adapt to different situations, and above all not to be jealous or possessive of those close to you. Until this lesson is learned, life will force many changes on you and you will be faced with many crises.',
+    6: '6 is the lesson of "Domestic Responsibility". You must learn to take on responsibility willingly without seeking perfection in others. Until this lesson is learned, life will force you to manke many adjustments. You will be put into situations where friends and familiy will do little for you yet burden you with many requirements.',
+    7: '7 is the lesson of "Emotional and Spiritual Mastery". You must learn to have faith. Until this lesson is learned you will be exposed to bereavement, loneliness, poverty, and isolation.',
+    8: '8 is the lesson of "Material and Financial Mastery". You must learn how to handle your own affairs. Until this lesson is learned, life will force you into situations where you must distribute your funds wisely or else feel the lack of them.',
+    9: '9 is the lesson of "Compassion". You must learn to have sympathy and understanding for the feelings of others. Until this lesson is learned life will bring you much emotional pain.',
 }
 
 const hiddenTendencies = {
-    1: 'Mollit reprehenderit consectetur sint culpa ipsum voluptate voluptate',
-    2: 'Consectetur magna culpa consectetur pariatur amet cupidatat',
-    3: 'Anim amet enim culpa eu.',
-    4: 'Officia irure duis ut veniam aliqua proident exercitation eiusmod qui sunt culpa.',
-    5: 'Amet veniam excepteur nulla qui id cupidatat incididunt et fugiat duis proident qui.',
-    6: 'Sit ea excepteur ea eiusmod sit tempor eiusmod ullamco cupidatat velit veniam reprehenderit laborum.',
-    7: 'Sit laboris et duis deserunt minim dolor exercitation reprehenderit sunt aute.',
-    8: 'Id aliqua voluptate enim duis officia.',
-    9: 'Et ipsum excepteur incididunt fugiat dolor velit in ullamco eu.',
-    11: 'Pariatur nisi et commodo mollit elit tempor proident velit dolor in reprehenderit.',
-    22: 'Tempor pariatur sint magna et quis dolor ullamco.',
+    1: '1 is the desire for "Self". There is a tendency to be opinionated, domineering, egotistical.',
+    2: '2 is the desire for "Associations". There is a tendency to rely too heavily on others, to drain family and friends both emotionally and physically.',
+    3: '3 is the desire for "Self-Expression". There is a tendency to be boastful, impatient, aimless, and party-seeking, and to scatter the energies.',
+    4: '4 is the desire to "Work". There is a tendency to smoother the self with too many details and mundane tasks, to be stubborn and narrow-minded.',
+    5: '5 is the desire to "Change and Personal Freedom". There is a tendency to misuse freedom at the expense of others, to overindulge in sex or drugs, to seek change with reason, to be hasty and impulsive.',
+    6: '6 is the desire to "Achievement and Responsibility". There is a tendency to be overly concerned with family and duties, to be stubborn, self-righteous, and ingrained with unyielding ideals.',
+    7: '7 is the desire for "Wisdom and Knowledge". There is a tentendcy toward secretiveness, scheming, and alcoholism.',
+    8: '8 is the desire for "Material Things". There is a tendency to be overly concerned with the attainment of wealth and power.',
+    9: '9 is the desire for "Universal Knowledge and All-Encompassing Love". There is a tendency to be overly concerned with the problems of the world to the detriment of yourself.'
 }
 
 const subconciousResponse = {
-    1: 'Mollit reprehenderit consectetur sint culpa ipsum voluptate voluptate',
-    2: 'Consectetur magna culpa consectetur pariatur amet cupidatat',
-    3: 'Anim amet enim culpa eu.',
-    4: 'Officia irure duis ut veniam aliqua proident exercitation eiusmod qui sunt culpa.',
-    5: 'Amet veniam excepteur nulla qui id cupidatat incididunt et fugiat duis proident qui.',
-    6: 'Sit ea excepteur ea eiusmod sit tempor eiusmod ullamco cupidatat velit veniam reprehenderit laborum.',
-    7: 'Sit laboris et duis deserunt minim dolor exercitation reprehenderit sunt aute.',
-    8: 'Id aliqua voluptate enim duis officia.',
-    9: 'Et ipsum excepteur incididunt fugiat dolor velit in ullamco eu.',
-    11: 'Pariatur nisi et commodo mollit elit tempor proident velit dolor in reprehenderit.',
-    22: 'Tempor pariatur sint magna et quis dolor ullamco.',
+    3: 'You are a scattered, decentralized individual of ungoverned actions who reacts destructively and explosively.',
+    4: 'You are lost in a maze of details. Your reactions are very weak and your tendacy is to vacillate.',
+    5: 'You are tense and nervous. In crisis tend to be confused and impulsive.',
+    6: 'You are sentimental. You first concern is always for your loved ones and prized possessions.',
+    7: 'You are aloof and do not get personally involved. You regard situations analytically, then retreat into yourself. You might also turn to alcohol.',
+    8: 'You are efficient and oranized in a crisis. You are dependable and solid and can be relied upon in any situation.',
+    9: 'You are bored with life. Most things are of little importance to you. In a crisis you are impersonal, philosophical, and resigned.'
 }
 
 const HelpersService = {
