@@ -1,16 +1,16 @@
 .App {
-  padding-top: 20px;
   padding-bottom: 20px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .App__header {
   padding-left: 20px;
   padding-right: 20px;
-  margin-bottom: 35px;
+  min-height: 64px;
+  background-color: lightgrey;
+  position: relative;
 }
 
 .App__main {
-  margin-top: 70px;
-  margin: 70px 30px 30px 30px;
+  background-color: darkgrey
 }

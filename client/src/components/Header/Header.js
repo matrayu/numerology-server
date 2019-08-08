@@ -22,7 +22,7 @@ export default class Header extends Component {
 
     renderLogoutLink() {
         return (
-          <div className='Header__logged-in'>
+          <div className='navbar__logged-in'>
             <Link onClick={this.handleLogoutClick} to='/'>Logout</Link>
           </div>
         )
@@ -30,29 +30,30 @@ export default class Header extends Component {
     
     renderLoginLink() {
         return (
-            <div className='Header__not-logged-in'>
-                <Link to='/login'>Log in</Link>
-                <Link to='/register'>Get Started</Link>
+            <div className='navbar__not-logged-in'>
+                <Link className='btn btn-login' to='/login'>Log in</Link>
+                <Link className='btn btn-primary btn-register' to='/register'>Get Started</Link>
             </div>
         )
     }
 
     render() {
         return (
-            <div>
-                <nav className='Header'>
-                    <div className='Header group_left'>
-                        <Link to='/'>Numerology</Link>
-                        <span>Your Destiny Awaits.</span>
-                    </div>
-                    <div className='Header group_right'>
-                        {TokenService.hasAuthToken()
-                                ? this.renderLogoutLink()
-                                : this.renderLoginLink()
-                        }
+            <>
+                <nav className='Header navbar'>
+                    <div className='container d-flex'>
+                        <div className='navbar__brand'>
+                            <Link to='/'>Numerology</Link>
+                        </div>
+                        <div className='navbar__btns d-flex align-items-center'>
+                            {TokenService.hasAuthToken()
+                                    ? this.renderLogoutLink()
+                                    : this.renderLoginLink()
+                            }
+                        </div>
                     </div>
                 </nav>
-            </div>
+            </>
         )
     }
 }
