@@ -29,7 +29,6 @@ export default class Header extends Component {
     }
     
     renderLoginLink() {
-        console.log('renderLogin')
         return (
             <div className='Header__not-logged-in'>
                 <Link to='/login'>Log in</Link>
@@ -42,9 +41,11 @@ export default class Header extends Component {
         return (
             <div>
                 <nav className='Header'>
-                    <Link to='/'>Numerology</Link>
-                    <span>Your Destiny Awaits.</span>
-                    <div className='Header__buttons'>
+                    <div className='Header group_left'>
+                        <Link to='/'>Numerology</Link>
+                        <span>Your Destiny Awaits.</span>
+                    </div>
+                    <div className='Header group_right'>
                         {TokenService.hasAuthToken()
                                 ? this.renderLogoutLink()
                                 : this.renderLoginLink()

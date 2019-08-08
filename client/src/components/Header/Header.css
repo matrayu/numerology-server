@@ -1,4 +1,25 @@
-.nav {
+.Header {
+    height: 40px;
+    display: flex;
+    align-items: normal;
+    justify-content: space-between;
+}
+
+.Header .group_left {
+    display: grid;
+}
+
+.Header .group_right a {
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.Header .group_left a {
+    text-decoration: none;
+}
+
+
+/* .nav {
     height: 40px;
     display: flex;
     align-items: normal;
@@ -18,6 +39,8 @@
 .nav a {
     text-decoration: none;
 }
+
+
 
 .nav__tagline--wide {
     font-size: 14px;
@@ -65,4 +88,4 @@
     .nav__tagline--wide {
         font-size: 10pt;
     }
-}
+} */

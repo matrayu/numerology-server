@@ -24,10 +24,10 @@ export default class RegistrationPage extends Component {
         password: 'Tester12#',
         confirmPassword: 'Tester12#',
         passwordMatch: '',
-        first_name: 'Kobe',
-        middle_name: 'Bean',
-        last_name: 'Bryant',
-        dob: "1979-08-05",
+        first_name: '',
+        middle_name: '',
+        last_name: '',
+        dob: '',
         error: null  
     }
 

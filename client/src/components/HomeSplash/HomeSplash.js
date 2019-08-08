@@ -7,7 +7,7 @@ class HomeSplash extends Component {
     render() {
         
         return (
-            <main className='main-wrapper' role="main">
+            <main className='HomeSplash' role="main">
                 <section className='section'>
                     <div>
                         <h1>What is Numerology?</h1>
