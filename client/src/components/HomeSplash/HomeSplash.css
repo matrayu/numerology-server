@@ -1,0 +1,127 @@
+.header {
+    padding: 30px 20px;
+    background-image: url("https://cdn.pixabay.com/photo/2015/09/13/10/06/pay-937884_960_720.jpg");
+    /* filter: invert(100%); */
+    background-color: #5F6263;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: difference;
+}
+
+.section__1 {
+    padding: 45px 30px 70px 30px;
+    background-color: #0576B3;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+    padding: 0 44px;
+}
+
+p {
+    font-size: 16px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.card {
+    position: relative;
+    color: antiquewhite;
+    margin: 55px auto;
+    text-align: center;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+}
+
+.bkgnd__color__grey {
+    background-color: rgb(92, 92, 92);
+}
+
+.card__text {
+    width: 70%;
+}
+
+.card h3 {
+    text-transform: uppercase;
+}
+
+.card__1 {
+    background-image: url("https://picsum.photos/200")
+}
+
+.card__2 {
+    background-image: url("https://picsum.photos/201")
+}
+
+.card__3 {
+    background-image: url("https://picsum.photos/202")
+}
+
+.card__4 {
+    background-image: url("https://picsum.photos/203")
+}
+
+.card__5 {
+    background-image: url("https://picsum.photos/204")
+}
+
+.card__6 {
+    background-image: url("https://picsum.photos/205")
+}
+
+.section__3 {
+    margin: 100px;
+}
+
+.section__3_image {
+    padding: 150px;
+    width: 200px;
+    
+}
+
+.name__image {
+    background-image: url("https://picsum.photos/300")
+}
+
+.dob__image {
+    background-image: url("https://picsum.photos/301")
+}
+
+.section__3_card_text {
+    margin: auto 0;
+    padding: 0 20px;
+}
+
+.how-it-works {
+    text-align: center;
+}
+
+.d_flex {
+    display: flex;
+    justify-content: space-evenly;
+}

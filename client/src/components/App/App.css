@@ -1,16 +1,17 @@
 .App {
   padding-bottom: 20px;
   margin: auto;
+  font-family: 'Oswald', sans-serif;
 }
 
 .App__header {
   padding-left: 20px;
   padding-right: 20px;
   min-height: 64px;
-  background-color: lightgrey;
+  background-color: #1DC0FC;
   position: relative;
 }
 
 .App__main {
-  background-color: darkgrey
+  background-color: #0576B3;
 }
