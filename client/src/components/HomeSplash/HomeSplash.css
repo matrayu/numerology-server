@@ -8,10 +8,7 @@
     background-blend-mode: difference;
 }
 
-.section__1 {
-    padding: 45px 30px 70px 30px;
-    background-color: #0576B3;
-}
+
 
 .text-center {
     text-align: center;
@@ -24,12 +21,11 @@ h1 {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 22px;
 }
 
 h3 {
-    font-size: 20px;
-    padding: 0 44px;
+    font-size: 16px;
 }
 
 p {
@@ -58,16 +54,20 @@ p {
     background-blend-mode: multiply;
 }
 
+.section__1 {
+    margin: 10px;
+    padding: 33px 20px 70px 20px;
+    width: 33%;
+    background-color: #0576B3;
+    text-transform: capitalize;
+}
+
 .bkgnd__color__grey {
     background-color: rgb(92, 92, 92);
 }
 
 .card__text {
     width: 70%;
-}
-
-.card h3 {
-    text-transform: uppercase;
 }
 
 .card__1 {
@@ -95,17 +95,18 @@ p {
 }
 
 .section__3 {
-    margin: 100px;
+    margin: 72px;
 }
 
 .section__3_image {
     padding: 150px;
     width: 200px;
+    background-repeat: no-repeat;
     
 }
 
 .name__image {
-    background-image: url("https://picsum.photos/300")
+    background-image: url("https://picsum.photos/300");
 }
 
 .dob__image {
@@ -125,3 +126,28 @@ p {
     display: flex;
     justify-content: space-evenly;
 }
+
+.how-it-works {
+    color: antiquewhite;
+}
+
+.hw__container {
+    padding: 30px;
+}
+
+.row_reverse {
+    flex-direction: row-reverse;
+}
+
+.signup__container {
+    height: 200px;
+    background-color: #1DC0FC;
+}
+
+.signup__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
