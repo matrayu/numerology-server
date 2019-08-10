@@ -5,7 +5,7 @@ export default class RegStep1 extends Component {
     render() {
         let props = this.props
 
-        return(
+        return (
             <div className="form-group">
                 <label htmlFor="username">Username</label>
                 <input

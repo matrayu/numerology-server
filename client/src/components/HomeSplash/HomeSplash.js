@@ -7,18 +7,18 @@ class HomeSplash extends Component {
         
         return (
             <main className='HomeSplash' role="main">
-                <section className='header container text-center d_flex'>
+                <section className='header container text-center'>
                     <div className='card__container d_flex'>
-                        <div className='header__1 section__1 card'>
+                        <div className='section__1 header__1 section1__card'>
                             <h2 className='uppercase'>What is Numerology?</h2>
                             <h3>Numerology is technology dating back many centuries, to at least Pythagoras in the sixth century B.C., and probably even farther back to the peoples of ancient Egypt, China or India.</h3>
                         </div>
-                        <div className='section__1 header__2 card'>
-                            <h2 className='uppercase'>Numerology Will Unlock The Mysteries of Life</h2>
+                        <div className='section__1 header__2 section1__card'>
+                            <h2 className='uppercase'>Unlock The Mysteries of Life</h2>
                             <h3>Do you have a desire to know who you really are? To find out what really motivates you? To understand the lessons you must learn?</h3>
                         </div>
-                        <div className='section__1 header__3 card'>
-                            <h2 className='uppercase'>Experience numerology and gain deep insights.</h2>
+                        <div className='section__1 header__3 section1__card'>
+                            <h2 className='uppercase'>Gain deep insights.</h2>
                             <h3>Using just two data points, we'll create a numerology chart which will provide a wealth of infomation about yourself.</h3>
                         </div>
                     </div>
@@ -65,7 +65,6 @@ class HomeSplash extends Component {
                     <div>
                         <div className='hw__container'>
                             <h1>How It Works</h1>
-                            <h3>Using just two data points, we'll create a numerology chart which will provide a wealth of infomation about yourself.</h3>
                         </div>
                         <div className='section__3 d_flex name'>
                             <div className='section__3_image name__image'></div>

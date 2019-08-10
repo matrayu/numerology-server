@@ -1,5 +1,6 @@
 body {
   background-color: #0576B3;
+  min-width: 320px;
 }
 
 .App {
@@ -93,7 +94,7 @@ fieldset {
 }
 
 .form_container {
-  min-width: 315px;
+  /* min-width: 315px; */
   margin: 0 auto;
   text-align: center;
   color: antiquewhite;
@@ -128,6 +129,222 @@ form .btn {
   text-transform: uppercase;
 }
 
+.instructions {
+  margin: 20px 10%;
+}
+
+.navbar {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+}
+
+.navbar>.container {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.navbar__brand {
+  display: inline-block;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  color: #555a64;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 2px solid transparent;
+  padding: .625rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .3125rem;
+}
+
+.btn-register {
+  color: #fff;
+  background-color: #2568ef;
+  border-color: #2568ef;
+  box-shadow: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  padding: 30px 20px;
+  background-image: url("https://cdn.pixabay.com/photo/2015/09/13/10/06/pay-937884_960_720.jpg");
+  background-color: #5F6263;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: difference;
+}
+
+
+
+.text-center {
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.card {
+  position: relative;
+  color: antiquewhite;
+  margin: 55px auto;
+  text-align: center;
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+
+.section__1 {
+  color: antiquewhite;
+  flex: 1;
+  margin: 70px 12px;
+  padding: 33px 20px 70px 20px;
+  background-color: #0576B3;
+}
+
+.bkgnd__color__grey {
+  background-color: rgb(92, 92, 92);
+}
+
+.card__text {
+  width: 70%;
+}
+
+.card__1 {
+  background-image: url("https://picsum.photos/200")
+}
+
+.card__2 {
+  background-image: url("https://picsum.photos/201")
+}
+
+.card__3 {
+  background-image: url("https://picsum.photos/202")
+}
+
+.card__4 {
+  background-image: url("https://picsum.photos/203")
+}
+
+.card__5 {
+  background-image: url("https://picsum.photos/204")
+}
+
+.card__6 {
+  background-image: url("https://picsum.photos/205")
+}
+
+.section__3 {
+  margin: 25px 45px;
+}
+
+.section__3_image {
+  padding: 120px;
+  width: 200px;
+  background-repeat: no-repeat;
+  
+}
+
+.name__image {
+  background-image: url("https://picsum.photos/300");
+}
+
+.dob__image {
+  background-image: url("https://picsum.photos/301")
+}
+
+.section__3_card_text {
+  margin: auto 0;
+  padding: 0 20px;
+}
+
+
+.d_flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.how-it-works {
+  color: antiquewhite;
+  text-align: center;
+  max-width: 820px;
+  margin: auto;
+}
+
+.hw__container {
+  padding: 30px;
+}
+
+.row_reverse {
+  flex-direction: row-reverse;
+}
+
+.signup__container {
+  height: 100px;
+  background-color: #1DC0FC;
+}
+
+.signup__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 @media screen and (max-width: 685px) {
   .card__container {
     flex-direction: column;
@@ -153,19 +370,14 @@ form .btn {
   }
 }
 
-/* form .btn {
-  width: 80%;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
-  font-size: 14px;
-} */
+@media screen and (max-width: 449px) {
+  .navbar__btns {
+      margin: 20px 0;
+  }
+}
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 640px) {
   .RegistrationPage, .LoginPage {
       width: 50%;
   }
-
-  
 }
