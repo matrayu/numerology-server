@@ -85,7 +85,7 @@ class HomeSplash extends Component {
                 </section>
                 <div className='signup__container'>
                     <div className='signup__btn text-center'>
-                        <Link className="btn btn-primary" to='/register'>Create My Chart</Link>
+                        <Link className="btn btn-register upper" to='/register'>Create My Chart</Link>
                     </div>
                 </div>
             </main>

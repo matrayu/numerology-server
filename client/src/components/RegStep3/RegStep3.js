@@ -5,8 +5,7 @@ export default class RegStep2 extends Component {
     render() {
         let props = this.props
 
-        return(
-            <React.Fragment>
+        return (
             <div className="form-group">
                 <label htmlFor="dob">Date of Birth</label>
                 <input
@@ -18,8 +17,6 @@ export default class RegStep2 extends Component {
                     onChange={props.handleChange}
                 />      
             </div>
-            <button className="btn btn-success btn-block">Sign up</button>
-            </React.Fragment>
         );
     }
 }

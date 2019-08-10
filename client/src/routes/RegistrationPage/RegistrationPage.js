@@ -99,7 +99,9 @@ export default class RegistrationPage extends Component {
                 <button className="btn btn-primary float-right" type="button" onClick={this._next}>Next</button>        
             )
         }
-        return null;
+        return (
+            <button className="btn btn-success btn-block">Sign up</button>
+        )
     }
 
     renderStep1() {
@@ -141,21 +143,25 @@ export default class RegistrationPage extends Component {
     
     render() {
       return (
-        <React.Fragment>
-        <h1>Registration Form</h1>
-        <p>Step {this.state.currentStep} </p> 
-  
-        <form onSubmit={this.handleSubmit}>
-            {(this.state.currentStep === 1) 
-                ? this.renderStep1() 
-                : (this.state.currentStep === 2) 
-                    ? this.renderStep2() 
-                    : this.renderStep3()
-            }
-            {this.previousButton()}
-            {this.nextButton()}
-        </form>
-        </React.Fragment>
+        <div className='RegistrationPage'>
+            <div className='form_container'>
+                <h2>Sign Up</h2>
+                <p>Step {this.state.currentStep} </p> 
+        
+                <form onSubmit={this.handleSubmit}>
+                    {(this.state.currentStep === 1) 
+                        ? this.renderStep1() 
+                        : (this.state.currentStep === 2) 
+                            ? this.renderStep2() 
+                            : this.renderStep3()
+                    }
+                    <div className='btn__container'>
+                        {this.previousButton()}
+                        {this.nextButton()}
+                    </div>
+                </form>
+            </div>
+        </div>
       );
     }
 }

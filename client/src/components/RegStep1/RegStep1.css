@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
 }
 
@@ -8,37 +8,37 @@
     padding: 5%;
     border-radius: 2%;
     font-size: 12px;
-}
+} */
   
-input[type=text], input[type=email], input[type=password], select, textarea {
+/* input[type=text], input[type=email], input[type=password], select, textarea {
     width: 80%;
     padding: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
     font-size: 14px;
-    /* margin: 14px; */
-}
+    margin: 14px;
+} */
 
-.signup-control-group {
+/* .signup-control-group {
     display: flex;
-    justify-content: center;
+    justify-content: center; */
     /* align-items: center; */
     /* width: 80%; */
     /* padding: 6px; */
     /* border: 1px solid #ccc; */
     /* border-radius: 4px; */
     /* resize: vertical; */
-    margin: 10px -30px 10px -30px;
-}
+   /*  margin: 10px -30px 10px -30px; */
+/* } */
 
-fieldset {
+/* fieldset {
     border: 0;
 }
 
 .header {
     font-size: 30px;
-}
+} */
   
 /* label {
     padding: 12px 12px 12px 0;
@@ -53,7 +53,7 @@ fieldset {
     justify-content: center;
 } */
   
-button {
+/* button {
     background-color: rgb(42, 71, 235);
     width: 80%;
     color: white;
@@ -63,7 +63,7 @@ button {
     cursor: pointer;
     text-align: center;
     font-size: 14px;
-}
+} */
   
 /* button:hover {
     background-color: #45a049;
