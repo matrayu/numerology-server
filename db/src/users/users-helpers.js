@@ -165,7 +165,7 @@ function getKarmicHiddenSubconscious(allLetters) {
     return { 
         karmicLessons: karmicLessons,
         hiddenTendencies: hiddenTendencies,
-        subconciousResponse: karmicLessons.length
+        subconciousResponse: 9 - karmicLessons.length
     }
 }
 

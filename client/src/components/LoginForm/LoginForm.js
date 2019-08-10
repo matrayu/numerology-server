@@ -50,7 +50,7 @@ export default class LoginForm extends Component {
                 type="text"
                 placeholder="Enter username"
                 /* value={props.username} */
-                value='tester12'
+                value='tester21'
             />
 
             <label htmlFor="password">Password</label>

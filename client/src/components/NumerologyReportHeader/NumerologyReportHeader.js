@@ -21,40 +21,52 @@ class NumerologyReportHeader extends Component {
                 </div>
                 <section className='header_numData'>
                     <div className='header_text'>
-                        <div className='text_container'> 
-                            <h2>Motivation</h2> 
-                            <div className='header_number'>{userData.motivation}</div>
-                        </div>
+                        <a href='#motivation'> 
+                            <div className='text_container'> 
+                                <h2>Motivation</h2> 
+                                <div className='header_number'>{userData.motivation}</div>
+                            </div>
+                        </a>
                     </div>
                     <div className='header_text'>
-                        <div className='text_container'> 
-                            <h2>Inner-Self</h2> 
-                            <div className='header_number'>{userData.inner_self}</div>
-                        </div>
+                        <a href='#inner-self'> 
+                            <div className='text_container'> 
+                                <h2>Inner-Self</h2> 
+                                <div className='header_number'>{userData.inner_self}</div>
+                            </div>
+                        </a>
                     </div>
                     <div className='header_text'>
-                        <div className='text_container'> 
-                            <h2>Expression</h2> 
-                            <div className='header_number'>{userData.expression}</div>
-                        </div>
+                        <a href='#expression'> 
+                            <div className='text_container'> 
+                                <h2>Expression</h2> 
+                                <div className='header_number'>{userData.expression}</div>
+                            </div>
+                        </a>
                     </div>
                     <div className='header_text'>
-                        <div className='text_container'> 
-                            <h2>Karmic Lessons</h2> 
-                            <div className='header_number'>{userData.karmic_lessons.join(', ')}</div>
-                        </div>
+                        <a href='#karmic-lessons'>
+                            <div className='text_container'> 
+                                <h2>Karmic Lessons</h2> 
+                                <div className='header_number'>{userData.karmic_lessons.join(', ')}</div>
+                            </div>
+                        </a>
                     </div>
                     <div className='header_text'>
-                        <div className='text_container'> 
-                            <h2>Hidden Tendencies</h2> 
-                            <div className='header_number'>{userData.hidden_tendencies.join(', ')}</div>
-                        </div>
+                        <a href='#hidden-tendencies'>
+                            <div className='text_container'> 
+                                <h2>Hidden Tendencies</h2> 
+                                <div className='header_number'>{userData.hidden_tendencies.join(', ')}</div>
+                            </div>
+                        </a>
                     </div>
                     <div className='header_text'>
-                        <div className='text_container'> 
-                            <h2>Subconscious Response</h2> 
-                            <div className='header_number'>{userData.subconscious_response}</div>
-                        </div>
+                        <a href='#subconcious-response'>
+                            <div className='text_container'> 
+                                <h2>Subconscious Response</h2> 
+                                <div className='header_number'>{userData.subconscious_response}</div>
+                            </div>
+                        </a>
                     </div>
                 </section>
             </div>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import HelpersService from '../../services/helpers-service'
-//import { Link } from 'react-router-dom'
 
 export default class NumListItem extends Component {
     render() {
@@ -11,7 +10,7 @@ export default class NumListItem extends Component {
         content = HelpersService.getHiddenTendencies(this.props.number)
         
         return (
-            <div>{content}</div>
+            <div className='paragraph'>{content}</div>
         )
     }
 }
