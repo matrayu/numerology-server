@@ -49,7 +49,8 @@ export default class LoginForm extends Component {
                 name="username"
                 type="text"
                 placeholder="Enter username"
-                value={props.username}
+                /* value={props.username} */
+                value='tester12'
             />
 
             <label htmlFor="password">Password</label>
@@ -59,7 +60,8 @@ export default class LoginForm extends Component {
                   name="password"
                   type="password"
                   placeholder="Enter password"
-                  value={props.password}
+                  /* value={props.password} */
+                  value='Tester12#'
               />
           </div>
           <button className="btn btn-success btn-block">Log In</button>

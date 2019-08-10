@@ -9,23 +9,53 @@ class NumerologyReportHeader extends Component {
 
     render() {
         const { userData } = this.context
-        console.log(userData)
+        let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         let date = new Date(userData.dob)
-        let dob = `${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`
+        let dob = date.toLocaleDateString('en-US',options)
 
         return (
             <div className='NumerologyReportHeader'>
                 <div className='header_userData'>
-                    <h1>{`${userData.first_name} ${userData.middle_name} ${userData.last_name}`}</h1>
-                    <h3>{dob}</h3>
+                    <p className='report__name'>{`${userData.first_name} ${userData.middle_name} ${userData.last_name}`}</p>
+                    <p className='report__dob'>{dob}</p>
                 </div>
                 <section className='header_numData'>
-                    <div className='header_text'>Motivation <span className='header_number'>{userData.motivation}</span></div>
-                    <div className='header_text'>Inner-Self <span className='header_number'>{userData.inner_self}</span></div>
-                    <div className='header_text'>Expression <span className='header_number'>{userData.expression}</span></div>
-                    <div className='header_text'>Karmic Lessons <span className='header_number'>{userData.karmic_lessons.join(', ')}</span></div>
-                    <div className='header_text'>Hidden Tendencies <span className='header_number'>{userData.hidden_tendencies.join(', ')}</span></div>
-                    <div className='header_text'>Subconscious Response <span className='header_number'>{userData.subconscious_response}</span></div>
+                    <div className='header_text'>
+                        <div className='text_container'> 
+                            <h2>Motivation</h2> 
+                            <div className='header_number'>{userData.motivation}</div>
+                        </div>
+                    </div>
+                    <div className='header_text'>
+                        <div className='text_container'> 
+                            <h2>Inner-Self</h2> 
+                            <div className='header_number'>{userData.inner_self}</div>
+                        </div>
+                    </div>
+                    <div className='header_text'>
+                        <div className='text_container'> 
+                            <h2>Expression</h2> 
+                            <div className='header_number'>{userData.expression}</div>
+                        </div>
+                    </div>
+                    <div className='header_text'>
+                        <div className='text_container'> 
+                            <h2>Karmic Lessons</h2> 
+                            <div className='header_number'>{userData.karmic_lessons.join(', ')}</div>
+                        </div>
+                    </div>
+                    <div className='header_text'>
+                        <div className='text_container'> 
+                            <h2>Hidden Tendencies</h2> 
+                            <div className='header_number'>{userData.hidden_tendencies.join(', ')}</div>
+                        </div>
+                    </div>
+                    <div className='header_text'>
+                        <div className='text_container'> 
+                            <h2>Subconscious Response</h2> 
+                            <div className='header_number'>{userData.subconscious_response}</div>
+                        </div>
+                    </div>
                 </section>
             </div>
         )

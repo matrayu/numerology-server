@@ -1,0 +1,40 @@
+.header_userData {
+    margin: 4% 10%;
+    text-transform: capitalize;
+    color: antiquewhite;
+}
+
+.report__name {
+    font-size: 40px;
+    margin: 10px 0 0 0;
+}
+
+.report__dob {
+    font-size: 20px;
+    margin: 10px 0 0 0;
+}
+
+.header_numData {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header_text {
+    color: antiquewhite;
+    width: 220px;
+    height: 220px;
+    border: 9px solid antiquewhite;
+    border-radius: 50%;
+    margin: 30px 36px;
+    text-align: center;
+}
+
+.header_number {
+    font-size: 42px;
+    margin: 12px;
+}
+
+.text_container {
+    padding: 18% 27px;
+}

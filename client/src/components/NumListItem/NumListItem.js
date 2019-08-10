@@ -11,7 +11,7 @@ export default class NumListItem extends Component {
         content = HelpersService.getHiddenTendencies(this.props.number)
         
         return (
-            <p>{content}</p>
+            <div>{content}</div>
         )
     }
 }
