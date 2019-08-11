@@ -4,7 +4,6 @@ import './HomeSplash.css';
 
 class HomeSplash extends Component {
     render() {
-        
         return (
             <main className='HomeSplash' role="main">
                 <section className='header container text-center'>
@@ -18,7 +17,7 @@ class HomeSplash extends Component {
                             <h3>Do you have a desire to know who you really are? To find out what really motivates you? To understand the lessons you must learn?</h3>
                         </div>
                         <div className='section__1 header__3 section1__card'>
-                            <h2 className='uppercase'>Gain deep insights.</h2>
+                            <h2 className='uppercase'>Gain deep insights</h2>
                             <h3>Using just two data points, we'll create a numerology chart which will provide a wealth of infomation about yourself.</h3>
                         </div>
                     </div>

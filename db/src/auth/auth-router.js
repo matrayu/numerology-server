@@ -55,4 +55,14 @@ authRouter.post('/refresh', requireAuth, (req, res) => {
     })
 })
 
+authRouter.post('/user', requireAuth, (req, res) => {
+    const payload = { user_id: req.user.id }
+    const db = req.app.get('db')
+    return UserService.getUserDataBasic(db, req.user.id)
+        .then(userData => {
+            res
+                .send({ userData: userData})
+        })
+})
+
 module.exports = authRouter

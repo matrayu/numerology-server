@@ -27,9 +27,13 @@ class App extends Component {
     IdleService.setIdleCallback(this.logoutFromIdle)
 
     if (TokenService.hasAuthToken()) {
-      IdleService.regiserIdleTimerResets()
-      TokenService.queueCallbackBeforeExpiry(() => {
-        AuthApiService.postRefreshToken()
+      AuthApiService.getUserData()
+        .then(res => {
+          this.context.setUserData(res.userData)
+          IdleService.regiserIdleTimerResets()
+          TokenService.queueCallbackBeforeExpiry(() => {
+            AuthApiService.postRefreshToken()
+          })
       })
     }
   }
@@ -47,6 +51,7 @@ class App extends Component {
   }
 
   render() {
+    const { userData = [] } = this.context
     return (
       <div className="App">
         <header className="App__header">

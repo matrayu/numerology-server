@@ -261,6 +261,8 @@ p {
   margin: 70px 12px;
   padding: 33px 20px 70px 20px;
   background-color: #0576B3;
+  border: 7px solid darkgoldenrod;
+  border-radius: 22px
 }
 
 .bkgnd__color__grey {
@@ -272,27 +274,32 @@ p {
 }
 
 .card__1 {
-  background-image: url("https://picsum.photos/200")
+  background-position-y: bottom;
+  background-image: url("https://get.pxhere.com/photo/rock-ball-struggle-push-man-hill-business-person-roll-sunset-uphill-activity-businessman-challenge-concept-dessert-difficulty-dream-effort-employee-environment-future-giant-heavy-inspiring-job-motivation-move-occupation-power-silhouette-sphere-stone-strength-success-task-worker-sky-sun-afterglow-sunrise-atmosphere-cloud-morning-horizon-sunlight-evening-dawn-dusk-ecoregion-landscape-computer-wallpaper-calm-field-meteorological-phenomenon-1448189.jpg")
 }
 
 .card__2 {
-  background-image: url("https://picsum.photos/201")
+  background-position-y: center;
+  background-image: url("https://get.pxhere.com/photo/nature-girl-woman-photography-heart-portrait-model-reflection-sitting-studio-fashion-lady-hairstyle-sculpture-dress-figure-mirror-photograph-self-humor-creature-beauty-mind-spirit-psyche-character-i-mood-awareness-soul-she-identity-existence-ego-the-interior-of-the-personality-photo-shoot-wellbeing-the-act-of-mentality-esteemeth-portrait-photography-self-awareness-human-positions-art-model-being-which-inner-self-my-person-the-spiritual-image-of-the-the-mentality-of-the-disposition-of-the-face-of-the-the-spiritual-state-mental-state-the-internal-state-of-the-the-originality-of-individuality-has-the-specificity-of-the-specificity-of-the-way-of-being-the-depth-of-the-soul-810388.jpg")
 }
 
 .card__3 {
-  background-image: url("https://picsum.photos/202")
+  background-position-y: center;
+  background-image: url("https://get.pxhere.com/photo/sea-water-structure-sunrise-sunset-morning-wave-evening-reflection-relaxation-meditation-temple-yoga-buddha-deity-center-vibrations-awareness-attention-emotion-perception-impression-wellness-personality-subconscious-mind-shiva-wave-motion-gautama-buddha-unconscious-954268.jpg")
 }
 
 .card__4 {
-  background-image: url("https://picsum.photos/203")
+  background-position-y: center;
+  background-image: url("https://www.publicdomainpictures.net/pictures/290000/velka/yoga-meditation.jpg")
 }
 
 .card__5 {
-  background-image: url("https://picsum.photos/204")
+  background-position-y: center;
+  background-image: url("https://cdn.pixabay.com/photo/2015/04/03/19/57/cloud-705736_1280.jpg")
 }
 
 .card__6 {
-  background-image: url("https://picsum.photos/205")
+  background-image: url("https://cdn.pixabay.com/photo/2017/04/08/11/07/nerve-cell-2213009_1280.jpg")
 }
 
 .section__3 {
@@ -307,20 +314,22 @@ p {
   padding: 120px;
   width: 200px;
   background-repeat: no-repeat;
+  background-size: cover;
   
 }
 
 .name__image {
-  background-image: url("https://picsum.photos/300");
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/ee/Marilyn_Monroe_Birth_Certificate.jpg");
 }
 
 .dob__image {
-  background-image: url("https://picsum.photos/301")
+  background-position-y: center;
+  background-image: url("https://png2.kisspng.com/sh/35dcb1eaa74fd0ebf4278a3cb7d19b2f/L0KzQYm3U8E6N5p9fZH0aYP2gLBuTfdwd5hxfZ9sYXzofrXokr1kd551jeZucj3sc7F1k71oNaR6geZuLXHxdMP2ifQueJ9sReZ7YX72gLL5hf51NZRmhNd3ZHH1PYbogsA3amlqSNcBY3G3Poa3UsY4Omk6Sac7MUW0QYS4UMA2QWIziNDw/kisspng-google-calendar-computer-icons-g-suite-android-png-transparent-calendar-5ab06b8e0e6ca4.5026728515215113100591.png")
 }
 
 .section__3_card_text {
-  margin: auto 0;
-  padding: 0 20px;
+  margin: 0 0;
+  padding: 14px 18px;
 }
 
 

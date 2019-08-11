@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import NumReportContext from '../../contexts/NumReportContext'
-//import { Button, Input } from '../Utils/Utils'
 import AuthApiService from '../../services/auth-api-service'
 import './LoginForm.css';
 

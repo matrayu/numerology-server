@@ -45,7 +45,6 @@ const AuthApiService = {
                     : res.json()
             )
             .then(res => {
-                console.log(res)
                 TokenService.saveAuthToken(res.authToken)
                 IdleService.regiserIdleTimerResets()
                 TokenService.queueCallbackBeforeExpiry(() => {
@@ -53,6 +52,22 @@ const AuthApiService = {
                 })
                 return res
             })
+    },
+    getUserData() {
+        return fetch(`${config.API_ENDPOINT}/auth/user`, {
+            method: 'POST',
+            headers: {
+                'authorization': `Bearer ${TokenService.getAuthToken()}`,
+            }
+        })
+        .then(res =>
+            (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
+        )
+        .then(res => {
+            return res
+        })
     },
     postRefreshToken() {
         return fetch(`${config.API_ENDPOINT}/auth/refresh`, {
@@ -72,6 +87,7 @@ const AuthApiService = {
             - we don't need to queue the idle timers again as the user is already logged in.
             - we'll catch the error here as this refresh is happening behind the scenes
           */
+            console.log(res)
             TokenService.saveAuthToken(res.authToken)
             TokenService.queueCallbackBeforeExpiry(() => {
                 AuthApiService.postRefreshToken()
