@@ -30,7 +30,12 @@ const AuthApiService = {
                 })
                 return res
             })
+            .catch(err => {
+                console.log('login error')
+                console.error(err)
+            })
     },
+    
     postUser(user) {
         return fetch(`${config.API_ENDPOINT}/users`, {
             method: 'POST',
@@ -52,7 +57,12 @@ const AuthApiService = {
                 })
                 return res
             })
+            .catch(err => {
+                console.log('posting user error')
+                console.error(err)
+            })
     },
+
     getUserData() {
         return fetch(`${config.API_ENDPOINT}/auth/user`, {
             method: 'POST',
@@ -68,7 +78,12 @@ const AuthApiService = {
         .then(res => {
             return res
         })
+        .catch(err => {
+            console.log('getting user data error')
+            console.error(err)
+        })
     },
+
     postRefreshToken() {
         return fetch(`${config.API_ENDPOINT}/auth/refresh`, {
             method: 'POST',
