@@ -19,14 +19,14 @@ export default class RegistrationPage extends Component {
 
     state = {
         currentStep: 1,
-        email:  'north@aol.com',
-        username: 'qweqw',
-        password: 'Tester12#',
-        confirmPassword: 'Tester12#',
+        email:  '',
+        username: '',
+        password: '',
+        confirmPassword: '',
         passwordMatch: false,
-        first_name: 'Matt',
-        middle_name: 'Charl',
-        last_name: 'Fried',
+        first_name: '',
+        middle_name: '',
+        last_name: '',
         dob: null,
         error: null
     }
