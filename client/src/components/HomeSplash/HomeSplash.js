@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import TokenService from '../../services/token-service'
 import './HomeSplash.css';
 
 class HomeSplash extends Component {
@@ -83,7 +84,10 @@ class HomeSplash extends Component {
                 </section>
                 <div className='signup__container'>
                     <div className='signup__btn text-center'>
-                        <Link className="btn btn-register upper" to='/register'>Create My Chart</Link>
+                        {TokenService.hasAuthToken()
+                            ? <Link className="btn btn-register upper" to='/numerology-chart'>My Chart</Link>
+                            : <Link className="btn btn-register upper" to='/register'>Create My Chart</Link>
+                        }
                     </div>
                 </div>
             </main>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import NumReportContext from '../../contexts/NumReportContext'
 import HelpersService from '../../services/helpers-service'
 import NumListItem from '../../components/NumListItem/NumListItem'
 import './NumerologyReportData.css';
-//const { numNameData, userStats } = require('../seed');
 
 
 export default class NumerologyReportData extends Component {
@@ -80,6 +80,11 @@ export default class NumerologyReportData extends Component {
                         </div>
                     </div>
                 </section>
+                <div className='signup__container'>
+                    <div className='signup__btn text-center'>
+                        <Link className="btn btn-register upper" to='/more-data'>More Data</Link>
+                    </div>
+                </div>
             </div>
         )
     }

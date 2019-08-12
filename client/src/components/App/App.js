@@ -9,6 +9,7 @@ import AuthApiService from '../../services/auth-api-service';
 import IdleService from '../../services/idle-service.js';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import MoreData from '../../components/MoreData/MoreData'
 import NumReportContext from '../../contexts/NumReportContext'
 
 import './App.css';
@@ -51,7 +52,7 @@ class App extends Component {
   }
 
   render() {
-    const { userData = [] } = this.context
+    //const { userData = [] } = this.context
     return (
       <div className="App">
         <header className="App__header">
@@ -64,6 +65,7 @@ class App extends Component {
             <Route path={'/login'} component={LoginPage} />
             <Route path={'/register'} component={RegistrationPage} />
             <Route path={'/numerology-chart'} component={NumerologlyReport} />
+            <Route path={'/more-data'} component={MoreData} />
             <Route component={NotFoundPage} />
           </Switch>
         </main>

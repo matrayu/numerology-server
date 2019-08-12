@@ -19,27 +19,29 @@ export default class RegistrationPage extends Component {
 
     state = {
         currentStep: 1,
-        email:  'tester@aol.com',
-        username: '',
+        email:  'north@aol.com',
+        username: 'qweqw',
         password: 'Tester12#',
         confirmPassword: 'Tester12#',
-        passwordMatch: '',
-        first_name: '',
-        middle_name: '',
-        last_name: '',
-        dob: '',
-        error: null  
+        passwordMatch: false,
+        first_name: 'Matt',
+        middle_name: 'Charl',
+        last_name: 'Fried',
+        dob: null,
+        error: null
     }
+
+    
 
     handleChange = event => {
         const {name, value} = event.target
-        this.setState({ [name]: value })   
+        this.setState({ [name]: value })
     }
         
     handleSubmit = event => {
         event.preventDefault()
-        const { email, username, password, first_name, middle_name, last_name, dob } = this.state
 
+        const { email, username, password, first_name, middle_name, last_name, dob } = this.state
         this.setState({ error: null })
         AuthApiService.postUser({
             username: username,
@@ -69,38 +71,112 @@ export default class RegistrationPage extends Component {
         })
     }
 
+    checkUsername = () => {
+        if (this.state.username.length === 0) {
+            this.setState({ error: 'Please enter a valid username' })
+            return false
+        } else {
+            this.setState({ error: null })
+            return true
+        }
+    }
+
+    checkPassword = () => {
+        var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
+        if (this.state.password.length === 0) {
+            this.setState({ error: 'Please enter a valid password' })
+            return false
+        } else {
+            if (!re.test(String(this.state.password))) {
+                this.setState({ error: 'Password must contain at least 1 lowercase, 1 uppdercase, 1 numeric, and 1 special character. They must also be at least 8 characters in length'})
+                return false
+            } else {
+                if (this.state.password !== this.state.confirmPassword) {
+                    this.setState({ error: 'Passwords do not match' })
+                    return false
+                }
+            }
+        }
+        this.setState({ error: null })
+        return true
+    }
+
+    checkEmail = () => {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (this.state.email.length === 0 || !re.test(String(this.state.email).toLowerCase())) {
+            this.setState({ error: 'Please enter a valid email address' })
+            return false
+        } else {
+            this.setState({ error: null })
+            return true
+        }
+    }
+
+    checkName = () => {
+        if (this.state.first_name.length < 2 || this.state.last_name.length < 2) {
+            this.setState({ error: 'Please enter a valid name' })
+            return false
+        }
+        this.setState({ error: null })
+        return true
+    }
+
     _next = () => {
         let currentStep = this.state.currentStep
-        currentStep = currentStep >= 2? 3: currentStep + 1
+        if (currentStep === 1) {
+            if (!this.checkUsername()) {
+                return
+            } else {
+                if (!this.checkPassword()) {
+                    return
+                } else {
+                    if (!this.checkEmail()) {
+                        return
+                    }
+                }
+            }
+        }
+
+        if (currentStep === 2) {
+            if (!this.checkName()) {
+                return
+            }
+        }
+
+        currentStep = currentStep >= 2
+            ? 3
+            : currentStep + 1
         this.setState({ currentStep: currentStep })
     }
         
     _prev = () => {
         let currentStep = this.state.currentStep
-        currentStep = currentStep <= 1? 1: currentStep - 1
+        currentStep = currentStep <= 1
+            ? 1
+            : currentStep - 1
         this.setState({ currentStep: currentStep })
     }
   
   
     previousButton() {
-    let currentStep = this.state.currentStep;
-    if(currentStep !==1){
-        return (
-            <button className="btn btn-secondary" type="button" onClick={this._prev}>Previous</button>
-        )
-    }
-    return null;
-    }
-
-    nextButton(){
         let currentStep = this.state.currentStep;
-        if(currentStep <3){
+        if(currentStep !==1){
             return (
-                <button className="btn btn-primary float-right" type="button" onClick={this._next}>Next</button>        
+                <button className="btn btn-secondary" type="button" onClick={this._prev}>Previous</button>
+            )
+        }
+        return null;
+        }
+
+    nextButton() {
+        let currentStep = this.state.currentStep;
+        if (currentStep === 3){
+            return (
+                <button type='submit' className="btn btn-success btn-block" disabled={!this.state.dob}>Sign up</button>   
             )
         }
         return (
-            <button className="btn btn-success btn-block">Sign up</button>
+            <button className="btn btn-primary float-right" type="button" onClick={this._next}>Next</button>
         )
     }
 
@@ -132,7 +208,7 @@ export default class RegistrationPage extends Component {
 
     renderStep3() {
         return (
-            <RegStep3 //why isn't this changing (works correctly)
+            <RegStep3
                 currentStep={this.state.currentStep} 
                 handleChange={this.handleChange}
                 dob={this.state.dob}
@@ -147,7 +223,7 @@ export default class RegistrationPage extends Component {
             <div className='form_container'>
                 <h2>Sign Up</h2>
                 <p>Step {this.state.currentStep} </p> 
-        
+                
                 <form onSubmit={this.handleSubmit}>
                     {(this.state.currentStep === 1) 
                         ? this.renderStep1() 
@@ -155,6 +231,7 @@ export default class RegistrationPage extends Component {
                             ? this.renderStep2() 
                             : this.renderStep3()
                     }
+                    <div className={(this.state.error ? 'error' : 'hidden')}>{this.state.error}</div>
                     <div className='btn__container'>
                         {this.previousButton()}
                         {this.nextButton()}

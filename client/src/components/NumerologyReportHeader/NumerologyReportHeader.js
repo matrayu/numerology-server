@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './NumerologyReportHeader.css';
 import NumReportContext from '../../contexts/NumReportContext'
-//const { userStats, userDetails } = require('../seed');
 
 class NumerologyReportHeader extends Component {
     static contextType = NumReportContext

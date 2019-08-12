@@ -22,7 +22,8 @@ export default class Header extends Component {
 
     renderLogoutLink() {
         return (
-          <div className='navbar__logged-in'>
+          <div className='navbar__btns'>
+            <Link to='/numerology-chart'>My Chart</Link>
             <Link onClick={this.handleLogoutClick} to='/'>Logout</Link>
           </div>
         )
@@ -30,8 +31,8 @@ export default class Header extends Component {
     
     renderLoginLink() {
         return (
-            <div className='navbar__not-logged-in'>
-                <Link className='btn btn-login' to='/login'>Log in</Link>
+            <div className='navbar__btns'>
+                <Link to='/login'>Log in</Link>
                 <Link className='btn btn-primary btn-register' to='/register'>Get Started</Link>
             </div>
         )

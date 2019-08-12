@@ -2,6 +2,28 @@ import React, { Component } from 'react';
 import './RegStep1.css';
 
 export default class RegStep1 extends Component {
+    /* constructor(props) {
+        super(props)
+        this.state = {
+            validPassword: false
+        }
+    } */
+
+    /* handleCheckPassword = (ev) => {
+        this.props.handleChange(ev)
+        //console.log(this.props.password, this.props.confirmPassword, ev)
+        //this.callback(cb)
+        if (this.props.password === this.props.confirmPassword) {
+            this.setState({ validPassword: true })
+        }
+        this.setState({ validPassword: false })
+    }
+
+    callback = () => {
+        console.log(this.props.password, this.props.confirmPassword)
+        //console.log(cb)
+    } */
+
     render() {
         let props = this.props
 
@@ -16,6 +38,7 @@ export default class RegStep1 extends Component {
                     placeholder="Enter username"
                     value={props.username}
                     onChange={props.handleChange}
+                    required
                 />
     
                 <label htmlFor="email">Email address</label>
@@ -25,7 +48,7 @@ export default class RegStep1 extends Component {
                     name="email"
                     type="email"
                     placeholder="Enter email"
-                    value=/* {props.email} */"tester@aol.com"
+                    value={props.email}
                     onChange={props.handleChange}
                 />
     
@@ -36,7 +59,7 @@ export default class RegStep1 extends Component {
                     name="password"
                     type="password"
                     placeholder="Enter password"
-                    value=/* {props.password} */"Tester12#"
+                    value={props.password}
                     onChange={props.handleChange}
                 /> 
     
@@ -47,7 +70,7 @@ export default class RegStep1 extends Component {
                     name="confirmPassword"
                     type="password"
                     placeholder="Confirm password"
-                    value=/* {props.confirmPassword} */"Tester12#"
+                    value={props.confirmPassword}
                     onChange={props.handleChange}
                 /> 
             </div>

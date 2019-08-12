@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './RegStep3.css';
 
-export default class RegStep2 extends Component {
+export default class RegStep3 extends Component {
     render() {
         let props = this.props
 
