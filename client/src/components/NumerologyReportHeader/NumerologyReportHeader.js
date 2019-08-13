@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './NumerologyReportHeader.css';
 import NumReportContext from '../../contexts/NumReportContext'
+const moment = require('moment');
 
 class NumerologyReportHeader extends Component {
     static contextType = NumReportContext
@@ -8,9 +9,10 @@ class NumerologyReportHeader extends Component {
 
     render() {
         const { userData } = this.context
-        let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        let date = new Date(userData.dob)
-        let dob = date.toLocaleDateString('en-US',options)
+        let serverDate = moment(new Date(userData.dob))
+        let datePlusOne = serverDate.add(1, 'day')
+        let dob = datePlusOne.format('dddd, MMMM Do YYYY')
+        
 
         return (
             <div className='NumerologyReportHeader'>
