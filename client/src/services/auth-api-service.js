@@ -30,10 +30,6 @@ const AuthApiService = {
                 })
                 return res
             })
-            /* .catch(err => {
-                console.log('login error')
-                console.error(err)
-            }) */
     },
     
     postUser(user) {
@@ -56,11 +52,7 @@ const AuthApiService = {
                     AuthApiService.postRefreshToken()
                 })
                 return res
-            })/* 
-            .catch(err => {
-                console.log('posting user error')
-                console.error(err)
-            }) */
+            })
     },
 
     getUserData() {

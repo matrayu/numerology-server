@@ -28,6 +28,7 @@ export default class RegistrationPage extends Component {
         middle_name: '',
         last_name: '',
         dob: '',
+        isValid: false,
         error: null
     }
 
@@ -40,6 +41,10 @@ export default class RegistrationPage extends Component {
         
     handleSubmit = event => {
         event.preventDefault()
+        if (!this.state.isValid) {
+            return
+        }
+
 
         const { email, username, password, first_name, middle_name, last_name, dob } = this.state
         this.setState({ error: null })
@@ -67,7 +72,10 @@ export default class RegistrationPage extends Component {
         })
         .catch(res => {
             console.error(res.error)
-            this.setState({ error: res.error })
+            this.setState({ 
+                isValid: false,
+                error: res.error 
+            })
         })
     }
 
@@ -162,7 +170,7 @@ export default class RegistrationPage extends Component {
         let currentStep = this.state.currentStep;
         if(currentStep !==1){
             return (
-                <button className="btn btn-secondary" type="button" onClick={this._prev}>Previous</button>
+                <button className="btn btn-secondary" type="button" onClick={()=>this._prev()}>Previous</button>
             )
         }
         return null;
@@ -172,11 +180,11 @@ export default class RegistrationPage extends Component {
         let currentStep = this.state.currentStep;
         if (currentStep === 3){
             return (
-                <button type='submit' className="btn btn-success btn-block" disabled={!this.state.dob}>Sign up</button>   
+                <button type='submit' className="btn btn-success btn-block" disabled={!this.state.dob} onClick={()=> this.setState({ isValid: true })}>Sign up</button>   
             )
         }
         return (
-            <button className="btn btn-primary float-right" type="button" onClick={this._next}>Next</button>
+            <button className="btn btn-primary float-right" type="button" onClick={()=>this._next()}>Next</button>
         )
     }
 
@@ -212,6 +220,7 @@ export default class RegistrationPage extends Component {
                 currentStep={this.state.currentStep} 
                 handleChange={this.handleChange}
                 dob={this.state.dob}
+                isValid={this.state.isValid}
             />
         )
         
@@ -224,7 +233,7 @@ export default class RegistrationPage extends Component {
                 <h2>Sign Up</h2>
                 <p>Step {this.state.currentStep} </p> 
                 
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={e=>this.handleSubmit(e)}>
                     {(this.state.currentStep === 1) 
                         ? this.renderStep1() 
                         : (this.state.currentStep === 2) 
