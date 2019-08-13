@@ -4,14 +4,6 @@ import AuthApiService from '../../services/auth-api-service'
 import './LoginForm.css';
 
 export default class LoginForm extends Component {
-  /* constructor(props) {
-    super(props)
-    this.state = {
-      username: '',
-      password: '',
-      error: null
-    }
-  } */
 
   static defaultProps = {
     onLoginSuccess: () => {}

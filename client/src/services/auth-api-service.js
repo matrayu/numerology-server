@@ -70,10 +70,10 @@ const AuthApiService = {
         .then(res => {
             return res
         })
-        .catch(err => {
+        /* .catch(err => {
             console.log('getting user data error')
             console.error(err)
-        })
+        }) */
     },
 
     postRefreshToken() {

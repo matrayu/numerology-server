@@ -36,6 +36,9 @@ class App extends Component {
             AuthApiService.postRefreshToken()
           })
       })
+      .catch(err => {
+            console.error(err)
+      })
     }
   }
 
