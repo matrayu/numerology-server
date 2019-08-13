@@ -4,20 +4,26 @@ import AuthApiService from '../../services/auth-api-service'
 import './LoginForm.css';
 
 export default class LoginForm extends Component {
-  constructor(props) {
+  /* constructor(props) {
     super(props)
     this.state = {
       username: '',
       password: '',
       error: null
     }
-  }
+  } */
 
   static defaultProps = {
     onLoginSuccess: () => {}
   }
 
   static contextType = NumReportContext
+
+  state = {
+    username: '',
+    password: '',
+    error: null
+  }
 
   handleSubmitJwtAuth = ev => {
     ev.preventDefault()
@@ -34,13 +40,16 @@ export default class LoginForm extends Component {
         password.value = ''
         this.props.onLoginSuccess()
       })
+      .catch(res => {
+        console.error(res.error)
+        this.setState({ error: res.error })
+      })
   }
 
   handleChange = ev => {
     const target = ev.target;
     const value = target.value
     const name = target.name
-
     this.setState({ [name]: value })
   }
 
@@ -49,7 +58,8 @@ export default class LoginForm extends Component {
     const password = 'Tester12#'
     this.setState({
       username: username,
-      password: password
+      password: password,
+      error: null
     })
   }
 

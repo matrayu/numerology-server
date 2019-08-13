@@ -27,7 +27,7 @@ export default class RegistrationPage extends Component {
         first_name: '',
         middle_name: '',
         last_name: '',
-        dob: null,
+        dob: '',
         error: null
     }
 
@@ -66,7 +66,7 @@ export default class RegistrationPage extends Component {
             this.setUserDataContext(user.userData)
         })
         .catch(res => {
-            console.log(res.error)
+            console.error(res.error)
             this.setState({ error: res.error })
         })
     }

@@ -13,7 +13,7 @@ usersRouter
         const { password, username, first_name, middle_name, last_name, dob } = req.body
         const db = req.app.get('db')
 
-        for (const field of ['first_name', 'middle_name', 'last_name', 'username', 'password', 'dob']) {
+        for (const field of ['first_name', 'last_name', 'username', 'password', 'dob']) {
             if (!req.body[field])
                 return res.status(400).json({
                     error: `Missing '${field}' in request body`

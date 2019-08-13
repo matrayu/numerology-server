@@ -13,7 +13,7 @@ export default class RegStep3 extends Component {
                     id="dob"
                     name="dob"
                     type="date"
-                    //value=""
+                    value={this.props.dob}
                     onChange={props.handleChange}
                 />      
             </div>
