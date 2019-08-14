@@ -10,7 +10,6 @@ authRouter.post('/login', jsonBodyParser, (req, res, next) => {
     const { username, password } = req.body
     const loginUser = { username, password}
     const db = req.app.get('db')
-    console.log('here')
 
     for (const [key, value] of Object.entries(loginUser))
         if (value == null)
@@ -54,16 +53,26 @@ authRouter.post('/refresh', requireAuth, (req, res) => {
     res.send({
         authToken: AuthService.createJwt(sub, payload)
     })
+    .catch(res => {
+        console.error({ error: res.error })
+    })
 })
 
 authRouter.post('/user', requireAuth, (req, res) => {
-    const payload = { user_id: req.user.id }
     const db = req.app.get('db')
-    return UserService.getUserDataBasic(db, req.user.id)
+    UserService.getUserDataBasic(db, req.user.id)
         .then(userData => {
-            res
-                .send({ userData: userData})
+            if (!userData) {
+                return res.status(400).json({
+                    error: 'Could not retrieve user'
+                })
+            }
+            res.send({userData: userData})
+        })
+        .catch(err => {
+            console.error({ error: err.error })
         })
 })
+
 
 module.exports = authRouter

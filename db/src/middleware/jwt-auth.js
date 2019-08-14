@@ -24,6 +24,8 @@ function requireAuth(req, res, next) {
                 }
                 req.user = user
                 next()
+                ///ASK TJ ABOUT THE RETURN HERE. Causes run away promoise without it///
+                return null
             })
             .catch(err => {
                 console.error(err)

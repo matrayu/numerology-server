@@ -67,13 +67,6 @@ const AuthApiService = {
                 ? res.json().then(e => Promise.reject(e))
                 : res.json()
         )
-        .then(res => {
-            return res
-        })
-        /* .catch(err => {
-            console.log('getting user data error')
-            console.error(err)
-        }) */
     },
 
     postRefreshToken() {

@@ -28,16 +28,9 @@ class App extends Component {
     IdleService.setIdleCallback(this.logoutFromIdle)
 
     if (TokenService.hasAuthToken()) {
-      AuthApiService.getUserData()
-        .then(res => {
-          this.context.setUserData(res.userData)
-          IdleService.regiserIdleTimerResets()
-          TokenService.queueCallbackBeforeExpiry(() => {
-            AuthApiService.postRefreshToken()
-          })
-      })
-      .catch(err => {
-            console.error(err)
+      IdleService.regiserIdleTimerResets()
+      TokenService.queueCallbackBeforeExpiry(() => {
+        AuthApiService.postRefreshToken()
       })
     }
   }

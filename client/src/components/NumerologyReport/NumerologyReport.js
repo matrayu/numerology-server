@@ -10,6 +10,7 @@ class NumerologyReport extends Component {
     static contextType = NumReportContext
 
     getUserData() {
+        console.log('GET USER DATA RAN')
         if (TokenService.hasAuthToken()) {
             AuthApiService.getUserData()
               .then(res => {
