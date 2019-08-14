@@ -203,7 +203,7 @@ a {
 
 .header {
   padding: 30px 20px;
-  background-image: url("https://cdn.pixabay.com/photo/2015/09/13/10/06/pay-937884_960_720.jpg");
+  background-image: url('../../images/numbers-header.jpg');
   background-color: #5F6263;
   background-size: cover;
   background-repeat: no-repeat;
@@ -320,12 +320,12 @@ p {
 }
 
 .name__image {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/ee/Marilyn_Monroe_Birth_Certificate.jpg");
+  background-image: url('../../images/Marilyn_Monroe_Birth_Certificate.jpg');
 }
 
 .dob__image {
   background-position-y: center;
-  background-image: url("https://png2.kisspng.com/sh/35dcb1eaa74fd0ebf4278a3cb7d19b2f/L0KzQYm3U8E6N5p9fZH0aYP2gLBuTfdwd5hxfZ9sYXzofrXokr1kd551jeZucj3sc7F1k71oNaR6geZuLXHxdMP2ifQueJ9sReZ7YX72gLL5hf51NZRmhNd3ZHH1PYbogsA3amlqSNcBY3G3Poa3UsY4Omk6Sac7MUW0QYS4UMA2QWIziNDw/kisspng-google-calendar-computer-icons-g-suite-android-png-transparent-calendar-5ab06b8e0e6ca4.5026728515215113100591.png")
+  background-image: url('../../images/kisspng-google-calendar-computer-icons-g-suite-android-png-transparent-calendar-5ab06b8e0e6ca4.5026728515215113100591.png')
 }
 
 .section__3_card_text {
