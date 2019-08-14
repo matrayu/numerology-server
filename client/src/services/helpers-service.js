@@ -13,7 +13,7 @@ const motivation = {
 }
 
 const innerSelf = {
-    1: 'You dream of being a loner, courageous, daring, fair, loyal, original, a leader and a promoter of new ideas.',
+    1: 'You dream of being courageous, daring, fair, loyal, original, a leader and a promoter of new ideas.',
     2: 'You dream of being surrounded by loved ones in an atmosphere of peace and harmony.',
     3: 'You dream of being popular, attractive, artistic, creative, and applauded and appreciated by an audience.',
     4: 'You dream of being strong, reliable, practical, hard-working, a pillar of society upon whom all depend.',

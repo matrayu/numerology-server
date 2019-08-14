@@ -60,13 +60,13 @@ export default class RegistrationPage extends Component {
         })
         .then(user => {
             this.setState({
-                username: null,
-                password: null,
-                first_name: null,
-                middle_name: null,
-                last_name: null,
-                email: null,
-                dob: null
+                username: '',
+                password: '',
+                first_name: '',
+                middle_name: '',
+                last_name: '',
+                email: '',
+                dob: ''
             })
             this.setUserDataContext(user.userData)
         })
@@ -110,7 +110,7 @@ export default class RegistrationPage extends Component {
     }
 
     checkEmail = () => {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (this.state.email.length === 0 || !re.test(String(this.state.email).toLowerCase())) {
             this.setState({ error: 'Please enter a valid email address' })
             return false

@@ -10,8 +10,8 @@ class NumerologyReportHeader extends Component {
     render() {
         const { userData } = this.context
         let serverDate = moment(new Date(userData.dob))
-        let datePlusOne = serverDate.add(1, 'day')
-        let dob = datePlusOne.format('dddd, MMMM Do YYYY')
+        //let datePlusOne = serverDate.add(1, 'day')
+        let dob = serverDate.format('dddd, MMMM Do YYYY')
         
 
         return (
@@ -49,15 +49,21 @@ class NumerologyReportHeader extends Component {
                         <a href='#karmic-lessons'>
                             <div className='text_container'> 
                                 <h2>Karmic Lessons</h2> 
-                                <div className='header_number'>{userData.karmic_lessons.join(', ')}</div>
+                                {(userData.karmic_lessons.length > 0) 
+                                    ? <div className='header_number'>{userData.karmic_lessons.join(', ')}</div>
+                                    : <div className='header_number'>0</div>
+                                }
                             </div>
                         </a>
                     </div>
                     <div className='header_text'>
                         <a href='#hidden-tendencies'>
                             <div className='text_container'> 
-                                <h2>Hidden Tendencies</h2> 
-                                <div className='header_number'>{userData.hidden_tendencies.join(', ')}</div>
+                                <h2>Hidden Tendencies</h2>
+                                {(userData.hidden_tendencies.length > 0) 
+                                    ? <div className='header_number'>{userData.hidden_tendencies.join(', ')}</div>
+                                    : <div className='header_number'>0</div>
+                                } 
                             </div>
                         </a>
                     </div>

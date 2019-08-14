@@ -27,15 +27,18 @@ const UserHelper = {
     
         const vowels = name.replace(/[^aeiou]/ig, "");
         const consonants = name.replace(/[^bcdfghjklmnpqrstvwxyz]/ig, "");
+        const toLowerCase = name.replace(/ /g,'').toLowerCase();
+        const nameProcessed = toLowerCase.replace(/[^\w\s]/gi, '');
+
         const date = new Date();
         const year = date.getFullYear();
         const output = {
             motivation: getMotivation(vowels),
             inner_self: getInnerSelf(consonants),
-            expression: getExpression(name),
-            karmic_lessons: getKarmicHiddenSubconscious(name).karmicLessons,
-            hidden_tendencies: getKarmicHiddenSubconscious(name).hiddenTendencies,
-            subconscious_response: getKarmicHiddenSubconscious(name).subconciousResponse,
+            expression: getExpression(nameProcessed),
+            karmic_lessons: getKarmicHiddenSubconscious(nameProcessed).karmicLessons,
+            hidden_tendencies: getKarmicHiddenSubconscious(nameProcessed).hiddenTendencies,
+            subconscious_response: getKarmicHiddenSubconscious(nameProcessed).subconciousResponse,
             destiny: getDestinyNumber(dob),
             first_lifecycle: getFirstLifeCycle(dob),
             second_lifecycle: getSecondLifeCycle(dob),
@@ -114,8 +117,7 @@ function getInnerSelf(consonants) {
     }
 }
 
-function getExpression(allLetters) {
-    let name = allLetters.replace(/ /g,'').toLowerCase()
+function getExpression(name) {
     let total = 0
     for(let i = 0; i < name.length; i++) {
         total += letterCode[name[i]]
@@ -130,8 +132,7 @@ function getExpression(allLetters) {
     }
 }
 
-function getKarmicHiddenSubconscious(allLetters) {
-    let name = allLetters.replace(/ /g,'').toLowerCase()
+function getKarmicHiddenSubconscious(name) {
     let karmicLessons = []
     let hiddenTendencies = []
     let numObject = {
@@ -246,16 +247,6 @@ function getThirdLifeCycle(dob) {
     return thirdCycle
 }
 
-/* function getLifeCycles(dob) {
-    const lifeCycles = {
-        firstLifeCycle: getFirstLifeCycle(dob),
-        secondLifeCycle: getSecondLifeCycle(dob),
-        thirdLifeCycle: getThirdLifeCycle(dob)
-    }
-
-    return lifeCycles
-} */
-
 function getFirstTurningPoint(dob) {
     let firstTurningPoint = []
     let firstTurningPointNumber = reduceNum(parseInt(splitDob(dob)[1]) + parseInt(splitDob(dob)[2]))
@@ -298,18 +289,6 @@ function getFourthTurningPoint(dob) {
 
     return fourthTurningPoint
 }
-
-/* function getTurningPoints(dob) {
-    let turningPoints = []
-    turningPoints.push(
-        getFirstTurningPoint(dob),
-        getSecondTurningPoint(dob),
-        getThirdTurningPoint(dob),
-        getFourthTurningPoint(dob)
-    )
-
-    return turningPoints
-} */
 
 function getfirstMinorChallenge(dob) {
     let month = parseInt(splitDob(dob)[1])
@@ -355,18 +334,6 @@ function getMajorChallenge(dob) {
         }
     }
 }
-
-/* function getChallenges(dob) {
-    let challenges = []
-        challenges.push(
-        getfirstMinorChallenge(dob),
-        getsecondMinorChallenge(dob),
-        getMajorChallenge(dob)
-    )
-
-    return challenges
-
-} */
 
 
 module.exports = UserHelper

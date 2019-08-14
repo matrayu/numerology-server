@@ -54,11 +54,14 @@ export default class NumerologyReportData extends Component {
                     </div>
                     <div className='section__container'>
                         <div className='image__karmic_lessons image'>
-                            <div id='karmic-lessons' className='number'>{userData.karmic_lessons.join(', ')}</div>
+                        <div id='karmic-lessons' className='number'>{userData.karmic_lessons.join(', ')}</div>
                         </div>
                         <div className='data__text'>
                             <h2>Karmic Lessons</h2>
-                            <div>{this.renderArr(userData.karmic_lessons, 'karmic')}</div>
+                            {(userData.karmic_lessons.length > 0) 
+                                ? <div>{this.renderArr(userData.karmic_lessons, 'karmic')}</div>
+                                : <div className='paragraph'>It seems you have no lessons to learn!</div>
+                            }
                         </div>
                     </div>
                     <div className='section__container'>
@@ -67,7 +70,10 @@ export default class NumerologyReportData extends Component {
                         </div>
                         <div className='data__text'>
                             <h2>Hidden Tendencies</h2>
-                            <div>{this.renderArr(userData.hidden_tendencies, 'hidden')}</div>
+                            {(userData.hidden_tendencies.length > 0) 
+                                ? <div>{this.renderArr(userData.hidden_tendencies, 'hidden')}</div>
+                                : <div className='paragraph'>You don't appear to have any hidden tendencies!</div>
+                            }
                         </div>
                     </div>
                     <div className='section__container'>
