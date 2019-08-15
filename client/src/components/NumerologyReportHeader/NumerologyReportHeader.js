@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './NumerologyReportHeader.css';
 import NumReportContext from '../../contexts/NumReportContext'
 const moment = require('moment');
 

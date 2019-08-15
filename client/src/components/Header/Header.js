@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service'
 import IdleService from '../../services/idle-service'
 import NumReportContext from '../../contexts/NumReportContext'
-import './Header.css';
 
 export default class Header extends Component {
     static contextType = NumReportContext

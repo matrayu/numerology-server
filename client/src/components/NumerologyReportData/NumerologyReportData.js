@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import NumReportContext from '../../contexts/NumReportContext'
 import HelpersService from '../../services/helpers-service'
 import NumListItem from '../../components/NumListItem/NumListItem'
-import './NumerologyReportData.css';
 
 
 export default class NumerologyReportData extends Component {
