@@ -1,28 +1,6 @@
 import React, { Component } from 'react';
-import './RegStep1.css';
 
 export default class RegStep1 extends Component {
-    /* constructor(props) {
-        super(props)
-        this.state = {
-            validPassword: false
-        }
-    } */
-
-    /* handleCheckPassword = (ev) => {
-        this.props.handleChange(ev)
-        //console.log(this.props.password, this.props.confirmPassword, ev)
-        //this.callback(cb)
-        if (this.props.password === this.props.confirmPassword) {
-            this.setState({ validPassword: true })
-        }
-        this.setState({ validPassword: false })
-    }
-
-    callback = () => {
-        console.log(this.props.password, this.props.confirmPassword)
-        //console.log(cb)
-    } */
 
     render() {
         let props = this.props

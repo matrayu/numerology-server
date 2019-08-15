@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import NumerologyReport from './NumerologyReport';
 import { BrowserRouter} from 'react-router-dom';
-import { NumReportProvider } from '../../contexts/NumReportContext'
 
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
+  const historyMock = { push: jest.fn() };
   ReactDOM.render(
     <BrowserRouter>
-        <NumReportProvider>
-            <App />
-        </NumReportProvider>
+            <NumerologyReport history={historyMock} />
     </BrowserRouter>, div);
   ReactDOM.unmountComponentAtNode(div);
 });

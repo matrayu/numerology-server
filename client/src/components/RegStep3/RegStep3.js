@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './RegStep3.css';
 
 export default class RegStep3 extends Component {
     render() {

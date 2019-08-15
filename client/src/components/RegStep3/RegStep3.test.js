@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import RegStep3 from './RegStep3';
 import { BrowserRouter} from 'react-router-dom';
-import { NumReportProvider } from '../../contexts/NumReportContext'
 
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <BrowserRouter>
-        <NumReportProvider>
-            <App />
-        </NumReportProvider>
+            <RegStep3 />
     </BrowserRouter>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
