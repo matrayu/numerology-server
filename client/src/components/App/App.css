@@ -146,12 +146,13 @@ form .btn {
 }
 
 .navbar__brand {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
   padding: 14px 0;
-  margin: 0 89px 0 50px;
+  margin: 0 42px 0 50px;
 }
 
 @media screen and (max-width: 599px) {
@@ -593,6 +594,14 @@ a.logo:link,  a.logo:visited {
   visibility: hidden;
 }
 
+.image__logo {
+  background-image: url('../../images/NumLogo.png');
+  width: 41px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 10px;
+}
+
 
 @media screen and (max-width: 520px) {
   .section__container {
@@ -616,12 +625,6 @@ a.logo:link,  a.logo:visited {
 
   
 }
-
-/* @media screen and (max-width: 449px) {
-  .navbar__btns {
-      margin: 20px 0;
-  }
-} */
 
 @media screen and (min-width: 640px) {
   .RegistrationPage, .LoginPage {

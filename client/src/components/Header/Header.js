@@ -44,7 +44,8 @@ export default class Header extends Component {
                 <nav className='Header navbar'>
                     <div className='container d-flex'>
                         <div className='navbar__brand'>
-                            <Link to='/' className='logo'>Numerology App</Link>
+                            <Link to='/' className='logo'>Simple Numerology</Link>
+                            <div className='image__logo' />
                         </div>
                         <div className='navbar__btns d-flex align-items-center'>
                             {TokenService.hasAuthToken()
