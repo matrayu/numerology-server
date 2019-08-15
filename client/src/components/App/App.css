@@ -488,6 +488,8 @@ a.logo:link,  a.logo:visited {
   background-position: center;
   background-size: cover;
   flex: 1;
+  border: 11px solid mintcream;
+  border-radius: 67px;
 }
 
 .image__motivation {
