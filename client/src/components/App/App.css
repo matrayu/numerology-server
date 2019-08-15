@@ -137,27 +137,50 @@ form .btn {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1rem;
 }
 
 .navbar>.container {
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .navbar__brand {
   display: inline-block;
-  margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
   padding: 14px 0;
+  margin: 0 89px 0 50px;
+}
+
+@media screen and (max-width: 599px) {
+  .navbar__brand {
+    margin: 0 auto;
+  }
+
+  .navbar>.container {
+    flex-direction: column;
+  }
+
+  .navbar__btns {
+    padding-bottom: 5px;
+  }
+}
+
+
+
+.navbar__btns {
+  display: flex;
 }
 
 .navbar__btns>a {
   font-size: 18px;
   margin: 0 10px;
+}
+
+#login {
+  align-self: center;
 }
 
 .navbar__btns>a:link,.navbar__btns>a:visited {
@@ -166,10 +189,6 @@ form .btn {
 
 .d-flex {
   display: flex;
-}
-
-.align-items-center {
-  align-items: center;
 }
 
 .btn {

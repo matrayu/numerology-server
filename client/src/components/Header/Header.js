@@ -32,7 +32,7 @@ export default class Header extends Component {
     renderLoginLink() {
         return (
             <div className='navbar__btns'>
-                <Link to='/login'>Log in</Link>
+                <Link id='login' to='/login'>Log in</Link>
                 <Link className='btn btn-primary btn-register' to='/register'>Get Started</Link>
             </div>
         )
