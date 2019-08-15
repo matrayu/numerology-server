@@ -96,7 +96,7 @@ export default class RegistrationPage extends Component {
             return false
         } else {
             if (!re.test(String(this.state.password))) {
-                this.setState({ error: 'Password must contain at least 1 lowercase, 1 uppdercase, 1 numeric, and 1 special character. They must also be at least 8 characters in length'})
+                this.setState({ error: 'Passwords must be 8 characters and include at least 1 lowercase, 1 uppercase, 1 numeric, and 1 special character.'})
                 return false
             } else {
                 if (this.state.password !== this.state.confirmPassword) {
