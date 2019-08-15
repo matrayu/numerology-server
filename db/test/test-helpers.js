@@ -4,147 +4,222 @@ const jwt = require('jsonwebtoken')
 function makeUsersArray() {
   return [
     {
-      id: 1,
-      user_name: 'test-user-1',
-      full_name: 'Test user 1',
-      dob: '2000-01-02',
-      password: 'password',
-      date_created: '2029-01-22T16:28:32.615Z',
+      "id" : 1,
+      "username" : "matrayu",
+      "first_name" : "Matthew",
+      "middle_name" : "Charles",
+      "last_name" : "Friedberg",
+      "dob" : "1979-08-03T07:00:00Z",
+      "password" : "$2a$12$0\/C.O9U47sFRvjf6ne7QFuTCS5zlBFd3wthW7W8SqRJr49QjOw09G",
+      "motivation" : 4,
+      "inner_self" : 1,
+      "expression" : 5,
+      "karmic_lessons" : "{}",
+      "hidden_tendencies" : "{5,9}",
+      "subconscious_response" : 9,
+      "destiny" : 1,
+      "first_lifecycle" : "{8,1979,2015}",
+      "second_lifecycle" : "{3,2015,2042}",
+      "third_lifecycle" : "{8,2042}",
+      "first_turning_point" : "{11,1979,2015}",
+      "second_turning_point" : "{2,2015,2024}",
+      "third_turning_point" : "{4,2024,2033}",
+      "fourth_turning_point" : "{7,2033}",
+      "first_minor_challenge" : 5,
+      "second_minor_challenge" : 5,
+      "major_challenge" : 0,
+      "personal_year" : 5,
+      "astrological_influence" : 9,
+      "date_created" : "2019-08-13T23:23:27Z",
+      "date_modified" : null
     },
     {
-      id: 2,
-      user_name: 'test-user-2',
-      full_name: 'Test user 2',
-      dob: '1981-02-21',
-      password: 'password',
-      date_created: '2029-01-22T16:28:32.615Z',
+      "id" : 2,
+      "username" : "kobe24",
+      "first_name" : "Kobe",
+      "middle_name" : "Bean",
+      "last_name" : "Bryant",
+      "dob" : "1978-08-23T07:00:00Z",
+      "password" : "$2a$12$e.XJMtUGyNjdJi5heVYGT.tTU5Hz9JWO4H6rXpjyXT6.jDTWeL9h.",
+      "motivation" : 9,
+      "inner_self" : 9,
+      "expression" : 9,
+      "karmic_lessons" : "{3,4,8}",
+      "hidden_tendencies" : "{2,5}",
+      "subconscious_response" : 6,
+      "destiny" : 11,
+      "first_lifecycle" : "{8,1978,2004}",
+      "second_lifecycle" : "{23,2004,2031}",
+      "third_lifecycle" : "{7,2031}",
+      "first_turning_point" : "{4,1978,2004}",
+      "second_turning_point" : "{3,2004,2013}",
+      "third_turning_point" : "{7,2013,2022}",
+      "fourth_turning_point" : "{6,2022}",
+      "first_minor_challenge" : 15,
+      "second_minor_challenge" : 16,
+      "major_challenge" : 1,
+      "personal_year" : 7,
+      "astrological_influence" : 9,
+      "date_created" : "2019-08-13T23:24:53Z",
+      "date_modified" : null
     },
     {
-      id: 3,
-      user_name: 'test-user-3',
-      full_name: 'Test user 3',
-      dob: '1949-05-03',
-      password: 'password',
-      date_created: '2029-01-22T16:28:32.615Z',
+      "id" : 3,
+      "username" : "myusername",
+      "first_name" : "Matty",
+      "middle_name" : "",
+      "last_name" : "Fried",
+      "dob" : "1994-03-10T08:00:00Z",
+      "password" : "$2a$12$bzcQ9.N0WPP2T76T7sX92e2wmjRr0uYRHNP7LYCD3KC2lhYGQn8Du",
+      "motivation" : 6,
+      "inner_self" : 7,
+      "expression" : 4,
+      "karmic_lessons" : "{3,8}",
+      "hidden_tendencies" : "{}",
+      "subconscious_response" : 7,
+      "destiny" : 9,
+      "first_lifecycle" : "{3,1994,2022}",
+      "second_lifecycle" : "{10,2022,2049}",
+      "third_lifecycle" : "{5,2049}",
+      "first_turning_point" : "{4,1994,2022}",
+      "second_turning_point" : "{6,2022,2031}",
+      "third_turning_point" : "{1,2031,2040}",
+      "fourth_turning_point" : "{8,2040}",
+      "first_minor_challenge" : 7,
+      "second_minor_challenge" : 5,
+      "major_challenge" : 2,
+      "personal_year" : 7,
+      "astrological_influence" : 12,
+      "date_created" : "2019-08-14T03:28:40Z",
+      "date_modified" : null
     },
     {
-      id: 4,
-      user_name: 'test-user-4',
-      full_name: 'Test user 4',
-      dob: '1979-08-03',
-      password: 'password',
-      date_created: '2029-01-22T16:28:32.615Z',
+      "id" : 4,
+      "username" : "tester",
+      "first_name" : "Matthew",
+      "middle_name" : "",
+      "last_name" : "Friedberg",
+      "dob" : "1990-02-21T08:00:00Z",
+      "password" : "$2a$12$16fJ8yFFNl10bj.NXplaVu4tRo3xVsDGDt\/T6Qq6\/pF.4O0FOB5qy",
+      "motivation" : 7,
+      "inner_self" : 4,
+      "expression" : 11,
+      "karmic_lessons" : "{3}",
+      "hidden_tendencies" : "{5}",
+      "subconscious_response" : 8,
+      "destiny" : 6,
+      "first_lifecycle" : "{2,1990,2021}",
+      "second_lifecycle" : "{21,2021,2048}",
+      "third_lifecycle" : "{1,2048}",
+      "first_turning_point" : "{5,1990,2021}",
+      "second_turning_point" : "{4,2021,2030}",
+      "third_turning_point" : "{9,2030,2039}",
+      "fourth_turning_point" : "{3,2039}",
+      "first_minor_challenge" : 19,
+      "second_minor_challenge" : 20,
+      "major_challenge" : 1,
+      "personal_year" : 8,
+      "astrological_influence" : 8,
+      "date_created" : "2019-08-14T04:08:38Z",
+      "date_modified" : null
     },
+    {
+      "id" : 5,
+      "username" : "sharonlavi",
+      "first_name" : "Sharon",
+      "middle_name" : "",
+      "last_name" : "AzizLavi",
+      "dob" : "1979-02-21T08:00:00Z",
+      "password" : "$2a$12$PPJ4i2GqaW3Mhx7pNRYKwO1ZdT32.zLOl\/a91E2Beh0C87iPRf.N2",
+      "motivation" : 9,
+      "inner_self" : 1,
+      "expression" : 1,
+      "karmic_lessons" : "{2,7}",
+      "hidden_tendencies" : "{1}",
+      "subconscious_response" : 7,
+      "destiny" : 4,
+      "first_lifecycle" : "{2,1979,2012}",
+      "second_lifecycle" : "{21,2012,2039}",
+      "third_lifecycle" : "{8,2039}",
+      "first_turning_point" : "{5,1979,2012}",
+      "second_turning_point" : "{2,2012,2021}",
+      "third_turning_point" : "{7,2021,2030}",
+      "fourth_turning_point" : "{1,2030}",
+      "first_minor_challenge" : 19,
+      "second_minor_challenge" : 13,
+      "major_challenge" : 6,
+      "personal_year" : 8,
+      "astrological_influence" : 9,
+      "date_created" : "2019-08-14T04:31:43Z",
+      "date_modified" : null
+    },
+    {
+      "id" : 6,
+      "username" : "kuchulou",
+      "first_name" : "Sharon",
+      "middle_name" : "",
+      "last_name" : "Aziz Lavi",
+      "dob" : "1979-02-21T08:00:00Z",
+      "password" : "$2a$12$bDuy\/oNZ01CoLhct81\/0Uur5hMPI4A1YmBiMyTidrNpFC2HNK0JVm",
+      "motivation" : 9,
+      "inner_self" : 1,
+      "expression" : 1,
+      "karmic_lessons" : "{2,7}",
+      "hidden_tendencies" : "{1}",
+      "subconscious_response" : 7,
+      "destiny" : 4,
+      "first_lifecycle" : "{2,1979,2012}",
+      "second_lifecycle" : "{21,2012,2039}",
+      "third_lifecycle" : "{8,2039}",
+      "first_turning_point" : "{5,1979,2012}",
+      "second_turning_point" : "{2,2012,2021}",
+      "third_turning_point" : "{7,2021,2030}",
+      "fourth_turning_point" : "{1,2030}",
+      "first_minor_challenge" : 19,
+      "second_minor_challenge" : 13,
+      "major_challenge" : 6,
+      "personal_year" : 8,
+      "astrological_influence" : 9,
+      "date_created" : "2019-08-14T04:38:14Z",
+      "date_modified" : null
+    },
+    {
+      "id" : 7,
+      "username" : "dunxtand",
+      "first_name" : "Myles",
+      "middle_name" : "Duncan",
+      "last_name" : "Standish",
+      "dob" : "1990-12-15T08:00:00Z",
+      "password" : "$2a$12$gXeeHksDnl2NQhEXH8SXLuSgd\/LdglkeLVBKjgILkegUgLgvmrao6",
+      "motivation" : 1,
+      "inner_self" : 8,
+      "expression" : 9,
+      "karmic_lessons" : "{6}",
+      "hidden_tendencies" : "{1,5}",
+      "subconscious_response" : 8,
+      "destiny" : 1,
+      "first_lifecycle" : "{12,1990,2026}",
+      "second_lifecycle" : "{15,2026,2053}",
+      "third_lifecycle" : "{1,2053}",
+      "first_turning_point" : "{9,1990,2026}",
+      "second_turning_point" : "{7,2026,2035}",
+      "third_turning_point" : "{7,2035,2044}",
+      "fourth_turning_point" : "{4,2044}",
+      "first_minor_challenge" : 3,
+      "second_minor_challenge" : 14,
+      "major_challenge" : 11,
+      "personal_year" : 3,
+      "astrological_influence" : 9,
+      "date_created" : "2019-08-14T20:00:38Z",
+      "date_modified" : null
+    }
   ]
 }
 
-function makeThingsArray(users) {
-  return [
-    {
-      id: 1,
-      title: 'First test thing!',
-      image: 'http://placehold.it/500x500',
-      user_id: users[0].id,
-      date_created: '2029-01-22T16:28:32.615Z',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
-    },
-    {
-      id: 2,
-      title: 'Second test thing!',
-      image: 'http://placehold.it/500x500',
-      user_id: users[1].id,
-      date_created: '2029-01-22T16:28:32.615Z',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
-    },
-    {
-      id: 3,
-      title: 'Third test thing!',
-      image: 'http://placehold.it/500x500',
-      user_id: users[2].id,
-      date_created: '2029-01-22T16:28:32.615Z',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
-    },
-    {
-      id: 4,
-      title: 'Fourth test thing!',
-      image: 'http://placehold.it/500x500',
-      user_id: users[3].id,
-      date_created: '2029-01-22T16:28:32.615Z',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
-    },
-  ]
-}
-
-/* function makeReviewsArray(users, things) {
-  return [
-    {
-      id: 1,
-      rating: 2,
-      text: 'First test review!',
-      thing_id: things[0].id,
-      user_id: users[0].id,
-      date_created: '2029-01-22T16:28:32.615Z',
-    },
-    {
-      id: 2,
-      rating: 3,
-      text: 'Second test review!',
-      thing_id: things[0].id,
-      user_id: users[1].id,
-      date_created: '2029-01-22T16:28:32.615Z',
-    },
-    {
-      id: 3,
-      rating: 1,
-      text: 'Third test review!',
-      thing_id: things[0].id,
-      user_id: users[2].id,
-      date_created: '2029-01-22T16:28:32.615Z',
-    },
-    {
-      id: 4,
-      rating: 5,
-      text: 'Fourth test review!',
-      thing_id: things[0].id,
-      user_id: users[3].id,
-      date_created: '2029-01-22T16:28:32.615Z',
-    },
-    {
-      id: 5,
-      rating: 1,
-      text: 'Fifth test review!',
-      thing_id: things[things.length - 1].id,
-      user_id: users[0].id,
-      date_created: '2029-01-22T16:28:32.615Z',
-    },
-    {
-      id: 6,
-      rating: 2,
-      text: 'Sixth test review!',
-      thing_id: things[things.length - 1].id,
-      user_id: users[2].id,
-      date_created: '2029-01-22T16:28:32.615Z',
-    },
-    {
-      id: 7,
-      rating: 5,
-      text: 'Seventh test review!',
-      thing_id: things[3].id,
-      user_id: users[0].id,
-      date_created: '2029-01-22T16:28:32.615Z',
-    },
-  ];
-} */
-
+function getBasicUserData(userId)
 function makeExpectedThing(users, thing, reviews=[]) {
   const user = users
     .find(user => user.id === thing.user_id)
-
-  /* const thingReviews = reviews
-    .filter(review => review.thing_id === thing.id)
-
-  const number_of_reviews = thingReviews.length
-  const average_review_rating = calculateAverageReviewRating(thingReviews) */
 
   return {
     id: thing.id,
@@ -163,38 +238,6 @@ function makeExpectedThing(users, thing, reviews=[]) {
     },
   }
 }
-
-/* function calculateAverageReviewRating(reviews) {
-  if(!reviews.length) return 0
-
-  const sum = reviews
-    .map(review => review.rating)
-    .reduce((a, b) => a + b)
-
-  return Math.round(sum / reviews.length)
-} */
-
-/* function makeExpectedThingReviews(users, thingId, reviews) {
-  const expectedReviews = reviews
-    .filter(review => review.thing_id === thingId)
-
-  return expectedReviews.map(review => {
-    const reviewUser = users.find(user => user.id === review.user_id)
-    return {
-      id: review.id,
-      text: review.text,
-      rating: review.rating,
-      date_created: review.date_created,
-      user: {
-        id: reviewUser.id,
-        user_name: reviewUser.user_name,
-        full_name: reviewUser.full_name,
-        dob: reviewUser.dob,
-        date_created: reviewUser.date_created,
-      }
-    }
-  })
-} */
 
 function makeMaliciousThing(user) {
   const maliciousThing = {
