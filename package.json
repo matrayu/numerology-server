@@ -12,7 +12,8 @@
     "server": "node db/src/server.js",
     "client": "node start-client.js",
     "predeploy": "npm audit && npm run migrate-production",
-    "deploy": "git push heroku master"
+    "deploy": "git push heroku master",
+    "postdeploy": "now alias -A client/build/now.json"
   },
   "keywords": [],
   "engines": {
