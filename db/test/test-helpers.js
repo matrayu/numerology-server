@@ -216,7 +216,9 @@ function makeUsersArray() {
   ]
 }
 
-function getBasicUserData(userId)
+function getBasicUserData(userId) {
+  
+}
 function makeExpectedThing(users, thing, reviews=[]) {
   const user = users
     .find(user => user.id === thing.user_id)
@@ -269,8 +271,7 @@ function makeThingsFixtures() {
 function cleanTables(db) {
   return db.raw(
     `TRUNCATE
-      numerology_things,
-      numerology_users
+      users,
       RESTART IDENTITY CASCADE`
   )
 }
@@ -281,12 +282,12 @@ function seedUsers(db, users) {
     password: bcrypt.hashSync(user.password, 1)
   }))
   return db
-    .into('numerology_users')
+    .into('users')
     .insert(preppedUsers)
     .then(() => 
       // update the auto sequence to stay in sync
       db.raw(
-        `SELECT setval('numerology_users_id_seq', ?)`,
+        `SELECT setval('users_id_seq', ?)`,
         [users[users.length - 1].id]
       )
     )
@@ -342,14 +343,7 @@ function generateHash(pass) {
 
 module.exports = {
   makeUsersArray,
-  makeThingsArray,
-  makeExpectedThing,
-  makeMaliciousThing,
-
-  makeThingsFixtures,
   cleanTables,
-  seedThingsTables,
-  seedMaliciousThing,
   makeAuthHeader,
   seedUsers,
   generateHash

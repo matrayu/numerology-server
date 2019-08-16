@@ -9,7 +9,7 @@ it('renders without crashing', () => {
   const historyMock = { push: jest.fn() };
   ReactDOM.render(
     <BrowserRouter>
-            <NumerologyReport history={historyMock} />
+      <NumerologyReport history={historyMock} />
     </BrowserRouter>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
