@@ -21,15 +21,6 @@ body {
   background-color: #0576B3;
 }
 
-/* .LoginPage {
-  width: 50%;
-  margin: 0 auto;
-  padding: 20px 0;
-  text-align: center;
-  color: antiquewhite;
-} */
-
-
 .LoginPage {
   margin: 0 auto;
   text-align: center;
@@ -46,7 +37,7 @@ label {
   background: #f2f2f2;
   padding: 5%;
   border-radius: 2%;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 input[type=text], input[type=email], input[type=password], input[type=date], select, textarea {
@@ -110,7 +101,7 @@ fieldset {
 }
 
 form .btn {
-  width: 85%;
+  width: 87%;
   min-width: 120px;
   margin: 20px 7%;
   padding: 12px 20px;
@@ -243,15 +234,15 @@ h1 {
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 24px;
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 19px;
 }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .centered {
@@ -458,7 +449,7 @@ a.logo:link,  a.logo:visited {
 }
 
 .text_container > h2 {
-  font-size: 17px;
+  font-size: 18px;
   margin: 0;
 }
 
