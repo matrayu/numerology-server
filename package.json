@@ -6,13 +6,14 @@
   "scripts": {
     "test": "mocha --require \"db/test/setup.js\"",
     "dev": "nodemon db/src/server.js",
+    "build": "npm run build --prefix client",
     "migrate": "postgrator --config postgrator-config.js",
     "migrate-production": "postgrator --config postgrator-production-config.js",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node db/src/server.js",
     "client": "node start-client.js",
     "predeploy": "npm audit && npm run migrate-production",
-    "deploy": "git push heroku master",
+    "deploy": "git push heroku master && now client/build",
     "postdeploy": "now alias -A client/build/now.json"
   },
   "keywords": [],

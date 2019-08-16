@@ -8,7 +8,6 @@ class NumerologyReportHeader extends Component {
 
     render() {
         const { userData } = this.context
-        let serverDate = moment(new Date(userData.dob))
         let dob = moment(userData.dob).add(1, 'day').format('dddd, MMMM Do YYYY')
 
         return (
