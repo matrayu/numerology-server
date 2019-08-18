@@ -6,9 +6,8 @@ const helpers = require('./test-helpers')
 describe('Auth Endpoints', function() {
   let db
 
-  const { testUsers } = helpers.makeThingsFixtures()
+  const { testUsers } = helpers.makeUsersArray()
   const testUser = testUsers[0]
-
 
   before('make knex instance', () => {
     db = knex({
@@ -20,7 +19,7 @@ describe('Auth Endpoints', function() {
 
   after('disconnect from db', () => db.destroy())
 
-  before('cleanup', () => helpers.cleanTables(db))
+  beforeEach('cleanup', () => helpers.cleanTables(db))
 
   afterEach('cleanup', () => helpers.cleanTables(db))
 
@@ -68,46 +67,61 @@ describe('Auth Endpoints', function() {
         })
 
         it(`responds with 200 and JWT auth token using secret when valid credentials`, () => {
+                  
           const userValidCreds = {
             username: testUser.username,
             password: testUser.password,
           }
 
+          const payload = { user_id: testUser.id }
+          const subject = testUser.username
+
           const expectedToken = jwt.sign(
-            { user_id: testUser.id }, //payload
+            payload,
             process.env.JWT_SECRET,
             {
-              subject: testUser.username,
+              subject,
               expiresIn: process.env.JWT_EXPIRY,
               algorithm: 'HS256'
             }
           )
+
           return supertest(app)
             .post('/api/auth/login')
             .send(userValidCreds)
             .expect(200, {
               authToken: expectedToken,
+              userData: helpers.getBasicUserData(testUsers, testUser.id)
             })
         })
     })
   })
 
+
   describe(`POST /api/auth/refresh`, () => {
-    it(`responds 200 and JWT auth token using secret`, () => {
+    
+    
+    it.only(`responds 200 and JWT auth token using secret`, () => {
       before('cleanup', () => helpers.cleanTables(db))
       
+      const subject = testUser.username;
+      const payload = { user_id: testUser.id }
+
       const expectedToken = jwt.sign(
-        { user_id: testUser.id },
+        payload,
         process.env.JWT_SECRET,
         {
-          subject: testUser.username,
+          subject,
           expiresIn: process.env.JWT_EXPIRY,
           algorithm: 'HS256',
         }
       )
+
+      const authToken = helpers.makeAuthHeader(testUser)
+
       return supertest(app)
         .post('/api/auth/refresh')
-        .set('Authorization', helpers.makeAuthHeader(testUser))
+        .set('Authorization', authToken)
         .expect(200, {
           authToken: expectedToken,
         })

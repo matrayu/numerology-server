@@ -4,7 +4,7 @@
   "description": "NodeJS project for Simple Numerology App",
   "main": "app.js",
   "scripts": {
-    "test": "mocha \"db/test/setup.js\"",
+    "test": "mocha \"./db/test/*.js\"",
     "dev": "nodemon db/src/server.js",
     "migrate": "postgrator --config postgrator-config.js",
     "migrate-production": "postgrator --config postgrator-production-config.js",

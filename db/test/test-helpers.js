@@ -2,29 +2,29 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 function makeUsersArray() {
-  return [
+  const testUsers = [
     {
       "id" : 1,
       "username" : "matrayu",
       "first_name" : "Matthew",
       "middle_name" : "Charles",
       "last_name" : "Friedberg",
-      "dob" : "1979-08-03T07:00:00Z",
-      "password" : "$2a$12$0\/C.O9U47sFRvjf6ne7QFuTCS5zlBFd3wthW7W8SqRJr49QjOw09G",
+      "dob" : "1979-08-03T00:00:00.000Z",
+      "password" : "$2a$12$0/C.O9U47sFRvjf6ne7QFuTCS5zlBFd3wthW7W8SqRJr49QjOw09G",
       "motivation" : 4,
       "inner_self" : 1,
       "expression" : 5,
-      "karmic_lessons" : "{}",
-      "hidden_tendencies" : "{5,9}",
+      "karmic_lessons" : [9],
+      "hidden_tendencies" : [5,9],
       "subconscious_response" : 9,
       "destiny" : 1,
-      "first_lifecycle" : "{8,1979,2015}",
-      "second_lifecycle" : "{3,2015,2042}",
-      "third_lifecycle" : "{8,2042}",
-      "first_turning_point" : "{11,1979,2015}",
-      "second_turning_point" : "{2,2015,2024}",
-      "third_turning_point" : "{4,2024,2033}",
-      "fourth_turning_point" : "{7,2033}",
+      "first_lifecycle" : [8,1979,2015],
+      "second_lifecycle" : [3,2015,2042],
+      "third_lifecycle" : [8,2042],
+      "first_turning_point" : [11,1979,2015],
+      "second_turning_point" : [2,2015,2024],
+      "third_turning_point" : [4,2024,2033],
+      "fourth_turning_point" : [7,2033],
       "first_minor_challenge" : 5,
       "second_minor_challenge" : 5,
       "major_challenge" : 0,
@@ -44,17 +44,17 @@ function makeUsersArray() {
       "motivation" : 9,
       "inner_self" : 9,
       "expression" : 9,
-      "karmic_lessons" : "{3,4,8}",
-      "hidden_tendencies" : "{2,5}",
+      "karmic_lessons" : [3,4,8],
+      "hidden_tendencies" : [2,5],
       "subconscious_response" : 6,
       "destiny" : 11,
-      "first_lifecycle" : "{8,1978,2004}",
-      "second_lifecycle" : "{23,2004,2031}",
-      "third_lifecycle" : "{7,2031}",
-      "first_turning_point" : "{4,1978,2004}",
-      "second_turning_point" : "{3,2004,2013}",
-      "third_turning_point" : "{7,2013,2022}",
-      "fourth_turning_point" : "{6,2022}",
+      "first_lifecycle" : [8,1978,2004],
+      "second_lifecycle" : [23,2004,2031],
+      "third_lifecycle" : [7,2031],
+      "first_turning_point" : [4,1978,2004],
+      "second_turning_point" : [3,2004,2013],
+      "third_turning_point" : [7,2013,2022],
+      "fourth_turning_point" : [6,2022],
       "first_minor_challenge" : 15,
       "second_minor_challenge" : 16,
       "major_challenge" : 1,
@@ -74,17 +74,17 @@ function makeUsersArray() {
       "motivation" : 6,
       "inner_self" : 7,
       "expression" : 4,
-      "karmic_lessons" : "{3,8}",
-      "hidden_tendencies" : "{}",
+      "karmic_lessons" : [3,8],
+      "hidden_tendencies" : [],
       "subconscious_response" : 7,
       "destiny" : 9,
-      "first_lifecycle" : "{3,1994,2022}",
-      "second_lifecycle" : "{10,2022,2049}",
-      "third_lifecycle" : "{5,2049}",
-      "first_turning_point" : "{4,1994,2022}",
-      "second_turning_point" : "{6,2022,2031}",
-      "third_turning_point" : "{1,2031,2040}",
-      "fourth_turning_point" : "{8,2040}",
+      "first_lifecycle" : [3,1994,2022],
+      "second_lifecycle" : [10,2022,2049],
+      "third_lifecycle" : [5,2049],
+      "first_turning_point" : [4,1994,2022],
+      "second_turning_point" : [6,2022,2031],
+      "third_turning_point" : [1,2031,2040],
+      "fourth_turning_point" : [8,2040],
       "first_minor_challenge" : 7,
       "second_minor_challenge" : 5,
       "major_challenge" : 2,
@@ -104,17 +104,17 @@ function makeUsersArray() {
       "motivation" : 7,
       "inner_self" : 4,
       "expression" : 11,
-      "karmic_lessons" : "{3}",
-      "hidden_tendencies" : "{5}",
+      "karmic_lessons" : [3],
+      "hidden_tendencies" : [5],
       "subconscious_response" : 8,
       "destiny" : 6,
-      "first_lifecycle" : "{2,1990,2021}",
-      "second_lifecycle" : "{21,2021,2048}",
-      "third_lifecycle" : "{1,2048}",
-      "first_turning_point" : "{5,1990,2021}",
-      "second_turning_point" : "{4,2021,2030}",
-      "third_turning_point" : "{9,2030,2039}",
-      "fourth_turning_point" : "{3,2039}",
+      "first_lifecycle" : [2,1990,2021],
+      "second_lifecycle" : [21,2021,2048],
+      "third_lifecycle" : [1,2048],
+      "first_turning_point" : [5,1990,2021],
+      "second_turning_point" : [4,2021,2030],
+      "third_turning_point" : [9,2030,2039],
+      "fourth_turning_point" : [3,2039],
       "first_minor_challenge" : 19,
       "second_minor_challenge" : 20,
       "major_challenge" : 1,
@@ -134,17 +134,17 @@ function makeUsersArray() {
       "motivation" : 9,
       "inner_self" : 1,
       "expression" : 1,
-      "karmic_lessons" : "{2,7}",
-      "hidden_tendencies" : "{1}",
+      "karmic_lessons" : [2,7],
+      "hidden_tendencies" : [1],
       "subconscious_response" : 7,
       "destiny" : 4,
-      "first_lifecycle" : "{2,1979,2012}",
-      "second_lifecycle" : "{21,2012,2039}",
-      "third_lifecycle" : "{8,2039}",
-      "first_turning_point" : "{5,1979,2012}",
-      "second_turning_point" : "{2,2012,2021}",
-      "third_turning_point" : "{7,2021,2030}",
-      "fourth_turning_point" : "{1,2030}",
+      "first_lifecycle" : [2,1979,2012],
+      "second_lifecycle" : [21,2012,2039],
+      "third_lifecycle" : [8,2039],
+      "first_turning_point" : [5,1979,2012],
+      "second_turning_point" : [2,2012,2021],
+      "third_turning_point" : [7,2021,2030],
+      "fourth_turning_point" : [1,2030],
       "first_minor_challenge" : 19,
       "second_minor_challenge" : 13,
       "major_challenge" : 6,
@@ -164,17 +164,17 @@ function makeUsersArray() {
       "motivation" : 9,
       "inner_self" : 1,
       "expression" : 1,
-      "karmic_lessons" : "{2,7}",
-      "hidden_tendencies" : "{1}",
+      "karmic_lessons" : [2,7],
+      "hidden_tendencies" : [1],
       "subconscious_response" : 7,
       "destiny" : 4,
-      "first_lifecycle" : "{2,1979,2012}",
-      "second_lifecycle" : "{21,2012,2039}",
-      "third_lifecycle" : "{8,2039}",
-      "first_turning_point" : "{5,1979,2012}",
-      "second_turning_point" : "{2,2012,2021}",
-      "third_turning_point" : "{7,2021,2030}",
-      "fourth_turning_point" : "{1,2030}",
+      "first_lifecycle" : [2,1979,2012],
+      "second_lifecycle" : [21,2012,2039],
+      "third_lifecycle" : [8,2039],
+      "first_turning_point" : [5,1979,2012],
+      "second_turning_point" : [2,2012,2021],
+      "third_turning_point" : [7,2021,2030],
+      "fourth_turning_point" : [1,2030],
       "first_minor_challenge" : 19,
       "second_minor_challenge" : 13,
       "major_challenge" : 6,
@@ -194,17 +194,17 @@ function makeUsersArray() {
       "motivation" : 1,
       "inner_self" : 8,
       "expression" : 9,
-      "karmic_lessons" : "{6}",
-      "hidden_tendencies" : "{1,5}",
+      "karmic_lessons" : [6],
+      "hidden_tendencies" : [1,5],
       "subconscious_response" : 8,
       "destiny" : 1,
-      "first_lifecycle" : "{12,1990,2026}",
-      "second_lifecycle" : "{15,2026,2053}",
-      "third_lifecycle" : "{1,2053}",
-      "first_turning_point" : "{9,1990,2026}",
-      "second_turning_point" : "{7,2026,2035}",
-      "third_turning_point" : "{7,2035,2044}",
-      "fourth_turning_point" : "{4,2044}",
+      "first_lifecycle" : [12,1990,2026],
+      "second_lifecycle" : [15,2026,2053],
+      "third_lifecycle" : [1,2053],
+      "first_turning_point" : [9,1990,2026],
+      "second_turning_point" : [7,2026,2035],
+      "third_turning_point" : [7,2035,2044],
+      "fourth_turning_point" : [4,2044],
       "first_minor_challenge" : 3,
       "second_minor_challenge" : 14,
       "major_challenge" : 11,
@@ -214,11 +214,32 @@ function makeUsersArray() {
       "date_modified" : null
     }
   ]
+  return { testUsers }
+    
 }
 
-function getBasicUserData(userId) {
-  
+
+function getBasicUserData(users, userId) {
+  const user = users.find(user => {
+    return user.id === userId
+  })
+    
+  return {
+    id: user.id,
+    username: user.username,
+    motivation: user.motivation,
+    inner_self: user.inner_self,
+    expression: user.expression,
+    karmic_lessons: user.karmic_lessons,
+    hidden_tendencies: user.hidden_tendencies,
+    subconscious_response: user.subconscious_response,
+    first_name: user.first_name,
+    middle_name: user.middle_name,
+    last_name: user.last_name,
+    dob: user.dob
+  }
 }
+
 function makeExpectedThing(users, thing, reviews=[]) {
   const user = users
     .find(user => user.id === thing.user_id)
@@ -271,7 +292,7 @@ function makeThingsFixtures() {
 function cleanTables(db) {
   return db.raw(
     `TRUNCATE
-      users,
+      users
       RESTART IDENTITY CASCADE`
   )
 }
@@ -330,10 +351,18 @@ function seedMaliciousThing(db, user, thing) {
 }
 
 function makeAuthHeader(user, secret = process.env.JWT_SECRET) {
-  const token = jwt.sign({ user_id: user.id }, secret, {
-    subject: user.user_name,
-    algorithm: 'HS256',
-  })
+  const subject = user.username;
+  const payload = { user_id: user.id }
+  
+  const token = jwt.sign(
+    payload, 
+    secret, 
+    {
+      subject,
+      algorithm: 'HS256',
+    }
+  )
+
   return `Bearer ${token}`
 }
 
@@ -346,5 +375,6 @@ module.exports = {
   cleanTables,
   makeAuthHeader,
   seedUsers,
-  generateHash
+  generateHash,
+  getBasicUserData,
 }

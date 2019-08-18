@@ -15,6 +15,10 @@ app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', {
 app.use(cors())
 app.use(helmet())
 
+/* app.get('/', (req, res) => {
+    res.send('')
+}) */
+
 app.use('/api/users', userRouter)
 app.use('/api/auth', authRouter)
 
