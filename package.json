@@ -4,12 +4,12 @@
   "description": "NodeJS project for Simple Numerology App",
   "main": "app.js",
   "scripts": {
-    "test": "mocha \"./db/test/*.js\"",
-    "dev": "nodemon db/src/server.js",
+    "test": "mocha \"./test/*.js\"",
+    "dev": "nodemon src/server.js",
     "migrate": "postgrator --config postgrator-config.js",
     "migrate-production": "postgrator --config postgrator-production-config.js",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node db/src/server.js",
+    "server": "node src/server.js",
     "client": "node start-client.js",
     "predeploy": "npm audit && npm run migrate-production",
     "deploy": "git push heroku master"

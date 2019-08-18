@@ -24,4 +24,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/db/migrations/_delete
+/migrations/_delete
+/client-delete
+/db-delete
