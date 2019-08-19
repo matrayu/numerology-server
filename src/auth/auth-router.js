@@ -33,7 +33,6 @@ authRouter.post('/login', jsonBodyParser, (req, res, next) => {
                     const sub = dbUser.username
                     const payload = { user_id: dbUser.id }
                     const token = AuthService.createJwt(sub, payload)
-                    //*****- why do I need to return this instead of creating a variable
                     return UserService.getUserDataBasic(db,dbUser.id)
                         .then(userData => {
                             res
