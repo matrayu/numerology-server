@@ -101,7 +101,7 @@ describe('Auth Endpoints', function() {
   describe(`POST /api/auth/refresh`, () => {
     
     
-    it.only(`responds 200 and JWT auth token using secret`, () => {
+    it(`responds 200 and JWT auth token using secret`, () => {
       before('cleanup', () => helpers.cleanTables(db))
       
       const subject = testUser.username;
