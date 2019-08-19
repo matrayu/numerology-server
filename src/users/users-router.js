@@ -8,7 +8,7 @@ const usersRouter = express.Router()
 const jsonBodyParser = express.json()
 
 usersRouter
-    .post('/', jsonBodyParser, (req, res, next) => {
+    .post('/register', jsonBodyParser, (req, res, next) => {
 
         const { password, username, first_name, middle_name, last_name, dob } = req.body
         const db = req.app.get('db')

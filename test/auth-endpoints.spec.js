@@ -39,7 +39,7 @@ describe('Auth Endpoints', function() {
             password: testUser.password
         }
 
-        it.only(`responds with 400 error when '${field}' is misssing`, () => {
+        it(`responds with 400 error when '${field}' is misssing`, () => {
             delete loginAttemptBody[field]
 
             return supertest(app)
@@ -91,14 +91,13 @@ describe('Auth Endpoints', function() {
             .send(userValidCreds)
             .expect(200, {
               authToken: expectedToken,
-              userData: helpers.getBasicUserData(testUsers, testUser.id)
             })
         })
     })
   })
 
 
-  describe(`POST /api/auth/refresh`, () => {
+  /* describe(`POST /api/auth/refresh`, () => {
     
     
     it(`responds 200 and JWT auth token using secret`, () => {
@@ -126,5 +125,5 @@ describe('Auth Endpoints', function() {
           authToken: expectedToken,
         })
     })
-  })
+  }) */
 })
