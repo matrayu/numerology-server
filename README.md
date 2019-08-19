@@ -9,8 +9,6 @@
   Backend API for Simple Numerology app.
 </p>
 
-[![Build Status](https://travis-ci.org/matrayu/numerology-app.svg?branch=master)](https://travis-ci.org/matrayu/numerology-app)
-
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
