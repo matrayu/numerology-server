@@ -6,5 +6,5 @@ services:
   - postgresql
 
 before_script:
-  - psql -c "CREATE DATABASE 'numerology-test';" -U postgres
+  - psql -c "CREATE DATABASE numerology_test;" -U postgres
   - psql -c "CREATE USER matrayu WITH PASSWORD 'bar';" -U postgres
