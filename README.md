@@ -1,7 +1,7 @@
 <h1 align="center"> Simple Numerology </h1> <br>
 <p align="center">
   <a href="https://gitpoint.co/">
-    <img alt="SimpleNumerology" title="SimpleNumerology" src="client/src/images/Num-Transparent.png" width="250">
+    <img alt="SimpleNumerology" title="SimpleNumerology" src="images/Num-Transparent.png" width="250">
   </a>
 </p>
 
