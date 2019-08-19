@@ -1,4 +1,4 @@
-<h1 align="center"> Simple Numerology </h1> <br>
+<h1 align="center"> Simple Numerology API</h1> <br>
 <p align="center">
   <a href="https://gitpoint.co/">
     <img alt="SimpleNumerology" title="SimpleNumerology" src="images/Num-Transparent.png" width="250">
@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  A simple numerology app. Built with React.
+  Backend API for Simple Numerology app.
 </p>
 
 
@@ -16,7 +16,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Features](#features)
+- [API Docs](#api-docs)
 - [Screenshots](#screenshots)
 - [Feedback](#feedback)
 - [Build Process](#build-process)
@@ -28,12 +28,12 @@
 
 Numerology is part of an occult field with its origins dating back many centuries. The findings of the original numerologists have been checked and refined in the field countless times, confirming over a period of thousands of years the vital correlations between people's traits and the numbers which numerologists assign to these traits. The Simple Numerology App allows users to quickly obtain their numbers which are generated based on their given name at birth and their birthdate.
 
-## Features
+## API Docs
 
-A few of the things you can do with Simple Numerology:
+The RESRful API serves 2 endpoints:
 
-* Set up an account
-* View your Motivation Number and Correlating Data 
+* A POST request to /auth/login to send a request to the database to check validate the user and log them in.
+* A POST request to /auth/user to retr 
 * View your Inner-Self Number and Correlating Data 
 * View your Expression Number and Correlating Data 
 * View your Karmic Lesson Number(s) and Correlating Data 

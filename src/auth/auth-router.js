@@ -33,14 +33,15 @@ authRouter.post('/login', jsonBodyParser, (req, res, next) => {
                     const sub = dbUser.username
                     const payload = { user_id: dbUser.id }
                     const token = AuthService.createJwt(sub, payload)
-                    return UserService.getUserDataBasic(db,dbUser.id)
+                    res.send({ authToken: token })
+                    /* return UserService.getUserDataBasic(db,dbUser.id)
                         .then(userData => {
                             res
                                 .send({
                                     authToken: token,
                                     userData: userData
                                 })
-                        })
+                        }) */
                 })
         })
         .catch(next)
@@ -57,7 +58,7 @@ authRouter.post('/refresh', requireAuth, (req, res) => {
     })
 })
 
-authRouter.post('/user', requireAuth, (req, res) => {
+authRouter.get('/user', requireAuth, (req, res) => {
     const db = req.app.get('db')
     UserService.getUserDataBasic(db, req.user.id)
         .then(userData => {
