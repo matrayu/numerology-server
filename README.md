@@ -35,6 +35,7 @@ Numerology is part of an occult field with its origins dating back many centurie
 #### Live App: https://simple-numerology-app.now.sh/
 
 Client Github Repo: https://github.com/matrayu/numerology-client
+
 Server Github Repo: https://github.com/matrayu/numerology-app
 <hr>
 
